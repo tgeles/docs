@@ -2,6 +2,7 @@ language: python
 branches:
   only:
     - master
+    - gh-pages
 python:
   - "3.4"
 install:
