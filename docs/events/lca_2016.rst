@@ -11,8 +11,7 @@ Zac Dover
 
 - First known example of English technical writing in 1391, Chaucer's
   *Treatise on the Astrolobe*.
-- history of telecommunication, not really much relation to technical writing
-- finished with an anecdote from early Apple tech writing
+- history of telecommunication, with special focus on trans-Atlantic cables
 
 
 Home and Away: Working from home
@@ -340,6 +339,9 @@ Matt Oliver
 
 - Swift's hashing scales well
 
+
+Thursday Feb 4
+~~~~~~~~~~~~~~
 
 
 Highlights
