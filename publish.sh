@@ -40,5 +40,5 @@ git push origin gh-pages
 # checkout master and signal completion
 git checkout master
 echo
-tput setaf 2; echo "Docs published to kallimachos/docs."
+tput setaf 2; echo "Docs published to http://kallimachos.github.io/docs."
 tput sgr0
