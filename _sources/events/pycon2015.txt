@@ -6,7 +6,7 @@ OpenStack: A vision for the future
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Monty Taylor
 
-- psychobabble thespia
+- psychoanalytic thespia
 - are we making a toolkit for people to use to develop clouds? Or to deploy
   clouds in various place?
 - OS should provide computers and networks that work
