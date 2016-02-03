@@ -15,7 +15,7 @@ git pull
 
 # checkout gh-pages branch and delete contents except . files
 git checkout gh-pages
-find ./* -not -name ".*" -delete
+find * -not -name ".*" -delete
 
 # checkout source directories from master and reset HEAD
 git checkout master $SOURCE
