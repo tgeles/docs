@@ -79,7 +79,19 @@
             
                 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../events/index.html">Event Logs</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">Git Guide</a><ul class="simple">
+<li class="toctree-l1 current"><a class="current reference internal" href="">Git Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#working-with-local-branches">Working with Local Branches</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#working-with-remote-branches">Working with Remote Branches</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#merging-branches">Merging Branches</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#using-bash-scripts">Using Bash Scripts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#sample-scripts">Sample Scripts</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">repocheck.sh</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">master.sh</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">branchlist.sh</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">pullall.sh</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../rax/index.html">Rackspace Public Cloud</a></li>
@@ -129,10 +141,285 @@
             
   <div class="section" id="git-guide">
 <h1>Git Guide<a class="headerlink" href="#git-guide" title="Permalink to this headline">#</a></h1>
-<p>A guide to Git written by &#64;kallimachos.</p>
-<div class="toctree-wrapper compound">
-<ul class="simple">
-</ul>
+<p>A basic guide to Git version control written by &#64;kallimachos.</p>
+<p>This guide also describes some sample Bash scripts that may make your life
+easier, and these are also included in the repository in the <code class="docutils literal"><span class="pre">scripts</span></code>
+directory.</p>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
+<p>Git is a distributed revision control and source code management (SCM)
+system with an emphasis on speed. Git was initially designed and
+developed by Linus Torvalds for Linux kernel development; it has since
+been adopted by many other projects. Every Git working directory is a
+full-fledged repository with complete history and full revision tracking
+capabilities, and is not dependent on network access or a central
+server. Git is free software distributed under the terms of the GNU
+General Public License version 2.</p>
+</div>
+<div class="section" id="working-with-local-branches">
+<h2>Working with Local Branches<a class="headerlink" href="#working-with-local-branches" title="Permalink to this headline">#</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Command</th>
+<th class="head">Result</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>git add <em>file</em></td>
+<td>adds the specified, untracked file to the index. Also used to update
+files to be committed after fixing merge conflicts.</td>
+</tr>
+<tr class="row-odd"><td>git commit -m &#8216;<em>message</em>&#8216; <em>file</em></td>
+<td>commits changes in the specified file or directory to the local
+repository</td>
+</tr>
+<tr class="row-even"><td>git commit -m &#8216;<em>message</em>&#8216; -a</td>
+<td>adds all new files to the index and commits all changes to the local
+repository</td>
+</tr>
+<tr class="row-odd"><td>git stash</td>
+<td>stashes current changes and sets branch to last commit. Useful for
+switching branches or pulling remote changes without having to commit
+local changes first.</td>
+</tr>
+<tr class="row-even"><td>git stash apply</td>
+<td>applies the changes stashed using the <code class="docutils literal"><span class="pre">git</span> <span class="pre">stash</span></code> command</td>
+</tr>
+<tr class="row-odd"><td>git rebase -i master</td>
+<td>interactively combines multiple commits into a single commit and rebases
+from master. <code class="docutils literal"><span class="pre">pick</span></code> the first commit listed, and enter <code class="docutils literal"><span class="pre">squash</span></code> for
+the rest.</td>
+</tr>
+<tr class="row-even"><td>git branch</td>
+<td>displays local branches</td>
+</tr>
+<tr class="row-odd"><td>git branch -a</td>
+<td>displays all local and remote branches</td>
+</tr>
+<tr class="row-even"><td>git branch <em>branch</em></td>
+<td>creates a new local branch with the specified name</td>
+</tr>
+<tr class="row-odd"><td>git checkout <em>branch</em></td>
+<td>checks out the specified local branch. If you checkout another branch
+without committing changes in the current branch, the uncommitted files
+will be copied to the new branch.</td>
+</tr>
+<tr class="row-even"><td>git branch -d <em>branch</em></td>
+<td>deletes the specified local branch if it has been merged</td>
+</tr>
+<tr class="row-odd"><td>git branch -D <em>branch</em></td>
+<td>deletes the specified local branch regardless of its merge status</td>
+</tr>
+</tbody>
+</table>
+<p>⁠</p>
+</div>
+<div class="section" id="working-with-remote-branches">
+<h2>Working with Remote Branches<a class="headerlink" href="#working-with-remote-branches" title="Permalink to this headline">#</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Command</th>
+<th class="head">Result</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>git checkout &#8211;track origin/<em>branch</em></td>
+<td>creates and checks out a local tracking branch for the specified remote
+branch</td>
+</tr>
+<tr class="row-odd"><td>git fetch origin</td>
+<td>fetches the remote repository and stores it locally, but does not merge
+it with the current branch</td>
+</tr>
+<tr class="row-even"><td>git pull</td>
+<td>fetches and merges the remote repository with the local repository</td>
+</tr>
+<tr class="row-odd"><td>git pull origin <em>branch</em></td>
+<td>fetches and merges the specified remote branch with the current local
+branch</td>
+</tr>
+<tr class="row-even"><td>git rebase -i origin/master</td>
+<td>interactively combines multiple commits into a single commit and rebases
+from origin/master. <code class="docutils literal"><span class="pre">pick</span></code> the first commit listed, and enter
+<code class="docutils literal"><span class="pre">squash</span></code> for the rest.</td>
+</tr>
+<tr class="row-odd"><td>git push</td>
+<td>pushes all committed changes on all branches to the remote repo</td>
+</tr>
+<tr class="row-even"><td>git push origin <em>branch1</em>:<em>branch2</em></td>
+<td>creates a remote branch <em>branch2</em> and pushes the local branch <em>branch1</em>
+to it</td>
+</tr>
+<tr class="row-odd"><td>git push origin :<em>branch</em></td>
+<td>deletes the specified remote branch</td>
+</tr>
+<tr class="row-even"><td>git reset &#8211;hard origin/<em>branch</em></td>
+<td>resets the checked-out local branch to the status of the specified
+remote branch; running <code class="docutils literal"><span class="pre">git</span> <span class="pre">fetch</span> <span class="pre">origin</span></code> first is recommended</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="merging-branches">
+<h2>Merging Branches<a class="headerlink" href="#merging-branches" title="Permalink to this headline">#</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Command</th>
+<th class="head">Result</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>git cherry-pick <em>commit</em></td>
+<td>cherry-picks the specified commit to the current branch</td>
+</tr>
+<tr class="row-odd"><td>git merge <em>branch</em></td>
+<td>merges all commits from the specified branch into the current branch</td>
+</tr>
+<tr class="row-even"><td>git rebase master</td>
+<td>rebase your current branch using master</td>
+</tr>
+<tr class="row-odd"><td>git rebase origin/master</td>
+<td>rebase your current branch using origin/master</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="using-bash-scripts">
+<h2>Using Bash Scripts<a class="headerlink" href="#using-bash-scripts" title="Permalink to this headline">#</a></h2>
+<p>The following bash scripts can be used to run certain git commands
+across several repositories. These scripts can be run from any
+directory, and will return you to the directory in which you started.
+Creating aliases for your scripts for easy access is recommended.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">You must change <code class="docutils literal"><span class="pre">~/docs/*</span></code> in each script to the location of the git
+repositories on your local machine.</p>
+</div>
+<p><strong>Creating Bash Aliases</strong></p>
+<ol class="arabic">
+<li><p class="first">Create the script in a convenient location, for example
+<strong>~/scripts/</strong></p>
+</li>
+<li><p class="first">Make the script executable:</p>
+<p><code class="docutils literal"><span class="pre">$</span> <span class="pre">chmod</span> <span class="pre">a+x</span> <span class="pre">myscript.sh</span></code></p>
+</li>
+<li><p class="first">Open <strong>~/.bashrc</strong> and add an alias for the script:</p>
+<p><code class="docutils literal"><span class="pre">alias</span> <span class="pre">myscript='~/scripts/myscript.sh'</span></code></p>
+</li>
+<li><p class="first">Save the change, then reload the file for the current terminal
+session:</p>
+<p><code class="docutils literal"><span class="pre">$</span> <span class="pre">source</span> <span class="pre">~/.bashrc</span></code></p>
+</li>
+<li><p class="first">Run the script by using the alias on the command line:</p>
+<p><code class="docutils literal"><span class="pre">$</span> <span class="pre">myscript</span></code></p>
+</li>
+</ol>
+</div>
+<div class="section" id="sample-scripts">
+<h2>Sample Scripts<a class="headerlink" href="#sample-scripts" title="Permalink to this headline">#</a></h2>
+<div class="section" id="id1">
+<h3><a class="reference external" href="scripts/repocheck.sh">repocheck.sh</a><a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
+<p>This script runs <code class="docutils literal"><span class="pre">git</span> <span class="pre">status</span> <span class="pre">-s</span></code> on each repository. It is helpful for
+checking if you have any work that has not been committed or pushed.
+Note that the output is the short (-s) version. No message means that
+the working directory is clean. If you receive a message, run
+<code class="docutils literal"><span class="pre">git</span> <span class="pre">status</span></code> on the indicated repository for full information.</p>
+<p>Example Output:</p>
+<div class="code highlight-python"><div class="highlight"><pre>/docs/administration-guide
+
+/docs/release-notes
+
+/docs/rest-api-guide
+
+/docs/user-guide
+</pre></div>
+</div>
+</div>
+<div class="section" id="id2">
+<h3><a class="reference external" href="scripts/master.sh">master.sh</a><a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
+<p>This script runs <code class="docutils literal"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">master</span></code> on all repositories. Note that
+if you run this command with uncommitted changes in non-master branches,
+those changes will be copied to their corresponding master branch.</p>
+<p>Example Output:</p>
+<div class="code highlight-python"><div class="highlight"><pre>/docs/administration-guide
+Already on &#39;master&#39;
+
+/docs/release-notes
+Already on &#39;master&#39;
+
+/docs/rest-api-guide
+Already on &#39;master&#39;
+
+/docs/user-guide
+Already on &#39;master&#39;
+</pre></div>
+</div>
+</div>
+<div class="section" id="id3">
+<h3><a class="reference external" href="scripts/branchlist.sh">branchlist.sh</a><a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
+<p>This script runs <code class="docutils literal"><span class="pre">git</span> <span class="pre">branch</span> <span class="pre">-a</span></code> on all repositories. It shows you all
+the local and remote branches, and indicates which branches you have
+checked out. Remove the <code class="docutils literal"><span class="pre">-a</span></code> option to view only local branches.</p>
+<p>Example Output:</p>
+<div class="code highlight-python"><div class="highlight"><pre>/docs/administration-guide
+* master
+  remotes/origin/1.0
+  remotes/origin/1.1
+  remotes/origin/master
+
+/docs/release-notes
+  Enterprise
+  Online
+* master
+  remotes/origin/Enterprise
+  remotes/origin/Online
+  remotes/origin/master
+
+/docs/rest-api-guide
+  Enterprise
+* master
+  remotes/origin/Enterprise
+  remotes/origin/master
+
+/docs/user-guide
+  Enterprise
+* master
+  remotes/origin/Enterprise
+  remotes/origin/master
+</pre></div>
+</div>
+</div>
+<div class="section" id="id4">
+<h3><a class="reference external" href="scripts/pullall.sh">pullall.sh</a><a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
+<p>This script runs <code class="docutils literal"><span class="pre">git</span> <span class="pre">pull</span></code> on all remote repositories. It is helpful
+for pulling down changes from all the remote repositories in one action.</p>
+<p>Example Output:</p>
+<div class="code highlight-python"><div class="highlight"><pre>/docs/administration-guide
+Already up-to-date.
+
+/docs/release-notes
+Already up-to-date.
+
+/docs/REST-api-guide
+Already up-to-date.
+
+/docs/user-guide
+Already up-to-date.
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 
