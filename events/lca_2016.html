@@ -558,6 +558,38 @@ thousands of libraries around the world</li>
 <li>open sourced so the library wouldn&#8217;t get locked in</li>
 </ul>
 </div>
+<div class="section" id="a-detailed-look-at-erasure-codes-in-openstack-swift">
+<h3>A detailed look at erasure codes in OpenStack Swift<a class="headerlink" href="#a-detailed-look-at-erasure-codes-in-openstack-swift" title="Permalink to this headline">#</a></h3>
+<p>John Dickinson</p>
+<ul class="simple">
+<li>how do we reliably store something? Store multiple copies.</li>
+<li>problem is that this increases the size required for large DBs
+exponentially</li>
+<li>erasure codes store multiple copies through fractions of the data rather
+than storing complete copies</li>
+<li>represent data as coefficients of polynomials</li>
+<li>even if you lose some parts, you can reconstruct them using the polynomial</li>
+</ul>
+<div class="code highlight-python"><div class="highlight"><pre>g&#39;day
+
+[7, 27, 4, 1, 25]
+
+f(x) = 7x(4) + 27x(3) + 4x(2) + 1x(1) + 25
+</pre></div>
+</div>
+<ul class="simple">
+<li>uses http to communicate</li>
+<li>when a request is made, the server returns a 100 Continue status, which
+informs the client that it is ok to start transmitting data</li>
+<li>multiple 100 Continue calls are used to create a back and forth
+interaction between the client and the server</li>
+<li>a proxy between the client and the Object server performs the erasure code
+transformation. Thus the client and the server do not need to know anything
+about the erasure coding.</li>
+<li>after writing the erasure coded data, the proxy directs the server to write
+<em>.durable</em>, then the proxy sends a response to the client.</li>
+</ul>
+</div>
 </div>
 <div class="section" id="highlights">
 <h2>Highlights<a class="headerlink" href="#highlights" title="Permalink to this headline">#</a></h2>
