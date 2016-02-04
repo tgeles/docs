@@ -590,6 +590,42 @@ about the erasure coding.</li>
 <em>.durable</em>, then the proxy sends a response to the client.</li>
 </ul>
 </div>
+<div class="section" id="edlib-because-one-more-editor-is-never-enough">
+<h3>edlib: because one more editor is never enough<a class="headerlink" href="#edlib-because-one-more-editor-is-never-enough" title="Permalink to this headline">#</a></h3>
+<p>Neil Brown</p>
+<ul class="simple">
+<li>everything is pluggable</li>
+<li>multiple document backends</li>
+<li>multiple language bindings</li>
+<li>multiple multi-stage rendereres</li>
+<li>multiple display managers</li>
+<li>configurable key/event bindings</li>
+<li>loadable libraries for everything else</li>
+<li>core provides essential abstractions</li>
+<li>panes represent areas of interactions<ul>
+<li>may have children with depth</li>
+<li>send and receive all messages</li>
+</ul>
+</li>
+<li>documents and marks<ul>
+<li>set of interfaces provided by a pane</li>
+<li>multiple panes can access one document</li>
+</ul>
+</li>
+<li>commands<ul>
+<li>pass control between panes</li>
+<li>can pass control between languages</li>
+</ul>
+</li>
+<li>attributes<ul>
+<li>attributes are named strings</li>
+<li>elements (characters) in a document have attributes</li>
+<li>panes, marks, and documents have attributes</li>
+<li>can be used to pass extra information between commands</li>
+</ul>
+</li>
+</ul>
+</div>
 </div>
 <div class="section" id="highlights">
 <h2>Highlights<a class="headerlink" href="#highlights" title="Permalink to this headline">#</a></h2>

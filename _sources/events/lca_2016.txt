@@ -427,6 +427,42 @@ John Dickinson
   *.durable*, then the proxy sends a response to the client.
 
 
+edlib: because one more editor is never enough
+----------------------------------------------
+Neil Brown
+
+- everything is pluggable
+- multiple document backends
+- multiple language bindings
+- multiple multi-stage rendereres
+- multiple display managers
+- configurable key/event bindings
+- loadable libraries for everything else
+- core provides essential abstractions
+- panes represent areas of interactions
+
+  - may have children with depth
+  - send and receive all messages
+
+- documents and marks
+
+  - set of interfaces provided by a pane
+  - multiple panes can access one document
+
+- commands
+
+  - pass control between panes
+  - can pass control between languages
+
+- attributes
+
+  - attributes are named strings
+  - elements (characters) in a document have attributes
+  - panes, marks, and documents have attributes
+  - can be used to pass extra information between commands
+
+
+
 Highlights
 ~~~~~~~~~~
 
