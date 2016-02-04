@@ -343,6 +343,58 @@ Matt Oliver
 Thursday Feb 4
 ~~~~~~~~~~~~~~
 
+Building museum exhibits with open hardware: Raspberry Pi and Arduino
+---------------------------------------------------------------------
+Michael Borthwick
+
+- audio/visual experience of Oxfam Refugee Realities has a much greater
+  impact on the attendees, mainly school-age children
+
+  - minefield would have foot switches in the sand connected to an interface,
+    with connected sound as well
+  - but they didn't have any of these parts so Michael used an Arduino as the
+    in interface
+  - bright LEDs are helpful when testing so you know for sure if a signal
+    is coming through
+
+- Nick Cave exhibit
+
+  - used an arduino to power up DVD players embedded in the walls through
+    infra red
+
+- RAAF cut-away engine that visitors could watch operate for 30 seconds at a
+  time
+
+  - made custom board from various arduino add ons
+  - was able to use open source libraries for arduino add ons to build
+    the
+
+- AC/DC exhibit at Art Gallery Victoria
+
+  - only needed 2.1 sound channels, so used extra channels to control lighting
+  - used Arduino as controller
+
+- Raspberry Pi offers the ability to show HD video, but you can also show
+  historical video in native resolutions and aspect ratios
+- they can run long term on minimal power without issues
+- can easily be hidden or mounted in small places
+- great for making cultural material more accessible by providing subtitles
+  and close-captioning
+- simple touch sensor to turn subtitles on or off
+- subtitles can be added on the fly by the Raspberry Pi rather than hard-coded
+  into the video
+
+He aha te mea nui?
+------------------
+Chris Cormack
+
+- Koha library project, and open source Integrated Library System
+- https://koha-community.org/
+- started as a bespoke system for a local library in NZ, and is now used in
+  thousands of libraries around the world
+- open sourced so the library wouldn't get locked in
+
+
 
 Highlights
 ~~~~~~~~~~
