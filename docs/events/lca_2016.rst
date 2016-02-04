@@ -395,6 +395,37 @@ Chris Cormack
 - open sourced so the library wouldn't get locked in
 
 
+A detailed look at erasure codes in OpenStack Swift
+---------------------------------------------------
+John Dickinson
+
+- how do we reliably store something? Store multiple copies.
+- problem is that this increases the size required for large DBs
+  exponentially
+- erasure codes store multiple copies through fractions of the data rather
+  than storing complete copies
+- represent data as coefficients of polynomials
+- even if you lose some parts, you can reconstruct them using the polynomial
+
+.. code::
+
+   g'day
+
+   [7, 27, 4, 1, 25]
+
+   f(x) = 7x(4) + 27x(3) + 4x(2) + 1x(1) + 25
+
+- uses http to communicate
+- when a request is made, the server returns a 100 Continue status, which
+  informs the client that it is ok to start transmitting data
+- multiple 100 Continue calls are used to create a back and forth
+  interaction between the client and the server
+- a proxy between the client and the Object server performs the erasure code
+  transformation. Thus the client and the server do not need to know anything
+  about the erasure coding.
+- after writing the erasure coded data, the proxy directs the server to write
+  *.durable*, then the proxy sends a response to the client.
+
 
 Highlights
 ~~~~~~~~~~
