@@ -462,6 +462,31 @@ Neil Brown
   - can be used to pass extra information between commands
 
 
+Speaking their language: How to write for technical and non-technical audiences
+-------------------------------------------------------------------------------
+Rikki Endsley
+
+- what are you writing about
+- why are you writing about it
+- who is your reader (lay, managerial, experts)
+- will you re-use your content
+- research
+- create an outline
+- write
+- revise
+- `The care and feeding of the press
+  <http://netpress.org/care-feeding-press/>`_: best practices for working with
+  tech journalists:
+- becoming a good writer requires lots of reading and lots of writing
+- read examples of the type of document you intend to make
+- `How to: Writing an excellent post-event wrap up report
+  <http://hawthornlandings.org/2013/02/15/how-to-writing-an-excellent-post-event-wrap-up-report/>`_
+- consider how your content might be re-used
+- invite the reader in with your introduction
+- tell a story
+- leave out the boring parts
+- edit, edit, edit
+
 
 Highlights
 ~~~~~~~~~~

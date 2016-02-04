@@ -63,7 +63,6 @@ Working with Local Branches
    * - git branch -D *branch*
      - deletes the specified local branch regardless of its merge status
 
-⁠
 
 Working with Remote Branches
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
