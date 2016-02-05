@@ -86,6 +86,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#tuesday-feb-2">Tuesday Feb 2</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#wednesday-feb-3">Wednesday Feb 3</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#thursday-feb-4">Thursday Feb 4</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#friday-feb-5">Friday Feb 5</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#highlights">Highlights</a></li>
 </ul>
 </li>
@@ -648,6 +649,81 @@ tech journalists:</li>
 <li>tell a story</li>
 <li>leave out the boring parts</li>
 <li>edit, edit, edit</li>
+</ul>
+</div>
+</div>
+<div class="section" id="friday-feb-5">
+<h2>Friday Feb 5<a class="headerlink" href="#friday-feb-5" title="Permalink to this headline">#</a></h2>
+<div class="section" id="id2">
+<h3>Keynote<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
+<p>Genevieve Bell</p>
+<ul class="simple">
+<li>started career as an anthropologist at Stanford before taking a position at
+Intel in 1998</li>
+<li>intially Intel wanted her to find out what women and the &#8220;rest of the world&#8221;,
+aka not America, want. Basically, what do humans need and want, and how can
+technology meet those needs and wants.</li>
+<li>our present is messy and myriad</li>
+<li>context matters: we don&#8217;t necessarily want everything to be seamless</li>
+<li>our solutions need to human</li>
+</ul>
+</div>
+<div class="section" id="python-s-dark-corners">
+<h3>Python&#8217;s dark corners<a class="headerlink" href="#python-s-dark-corners" title="Permalink to this headline">#</a></h3>
+<p>Peter Lovett</p>
+<ul class="simple">
+<li>whitespace can cause unexpected behaviour:<ul>
+<li>run python -t to give warnings if you mix tabs and spaces</li>
+<li>python interprets a tab as 8 spaces</li>
+</ul>
+</li>
+<li>everything is an object<ul>
+<li>builtin types (int, float, etc)</li>
+<li>functions</li>
+<li>modules</li>
+<li>use <code class="docutils literal"><span class="pre">id(name)</span></code> to see what a name is pointing to, e.g. <code class="docutils literal"><span class="pre">id(a)</span></code></li>
+<li><code class="docutils literal"><span class="pre">b</span> <span class="pre">=</span> <span class="pre">list(a)</span></code> -&gt; creates a copy of the object, in this case a list</li>
+<li><code class="docutils literal"><span class="pre">b</span> <span class="pre">=</span> <span class="pre">a</span> <span class="pre">-&gt;</span> <span class="pre">b</span></code> and a point to the same object</li>
+<li><code class="docutils literal"><span class="pre">is</span></code> compares objects, <code class="docutils literal"><span class="pre">==</span></code> compares values</li>
+</ul>
+</li>
+<li>if you accidentally rebind a builtin, you can <code class="docutils literal"><span class="pre">import</span> <span class="pre">__builtin__</span></code> and
+use it to access the builtin: <code class="docutils literal"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">__builtin__.str('hi')</span></code></li>
+<li>Python does not prevent accidental name creation, but there are testing
+tools and IDEs that can help</li>
+<li>scope is localised when you do any assignment within a function; trying to
+use a global within a function then assigning in that function will cause
+an <code class="docutils literal"><span class="pre">unboundlocalvariable</span></code> error</li>
+<li>no void return type, so you don&#8217;t get an error if you assign to something
+you shouldn&#8217;t it just returns <code class="docutils literal"><span class="pre">None</span></code></li>
+<li>Fedora 23 to have Python 3 by defualt. Debian and Ubuntu will soon do the
+same.</li>
+</ul>
+</div>
+<div class="section" id="raspberry-pi-hacks">
+<h3>Raspberry Pi hacks<a class="headerlink" href="#raspberry-pi-hacks" title="Permalink to this headline">#</a></h3>
+<p>Ruth Suehle</p>
+<ul class="simple">
+<li>early 2006 concept based on Atmel ATmega644</li>
+<li>designed for educational use</li>
+<li>intended for Python but friendly for multiple languages</li>
+<li><a class="reference external" href="http://elinux.org/Main_Page">http://elinux.org/Main_Page</a> has a wealth of PI info</li>
+<li>Pi 2 has 40 GPIO as apposed to the Pi&#8217;s 26, but the first 26 are in the same
+order</li>
+<li>find your Pi: <code class="docutils literal"><span class="pre">cat</span> <span class="pre">/proc/cpuinfo</span></code> -&gt; revision number tells you the version</li>
+<li>If you have Hynyx RAM it may cause problems</li>
+<li>there is a display specifically for the Pi that uses the DSI output</li>
+<li>Fedora ARM Installer for loading OSes on SD cards</li>
+<li>you can use power bricks as a portable power source</li>
+<li>dx.com</li>
+<li>TP1 and TP2 are the pins for checking your power</li>
+<li>use a powered hub for peripherals</li>
+<li><a class="reference external" href="https://www.raspberrypi.org/blog/raspberry-leaf/">https://www.raspberrypi.org/blog/raspberry-leaf/</a></li>
+<li>use a case to protect your pi - lego works great</li>
+<li>RaspBMC/XBMC is now Kodi</li>
+<li>Running classic games works well on the Pi</li>
+<li><em>Raspberry Pi Hacks</em> written by Ruth Suehle and Tom Calloway</li>
+<li>Pi wants 5v 1amp. No more, no less.</li>
 </ul>
 </div>
 </div>

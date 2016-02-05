@@ -488,6 +488,81 @@ Rikki Endsley
 - edit, edit, edit
 
 
+Friday Feb 5
+~~~~~~~~~~~~
+
+Keynote
+-------
+Genevieve Bell
+
+- started career as an anthropologist at Stanford before taking a position at
+  Intel in 1998
+- intially Intel wanted her to find out what women and the "rest of the world",
+  aka not America, want. Basically, what do humans need and want, and how can
+  technology meet those needs and wants.
+- our present is messy and myriad
+- context matters: we don't necessarily want everything to be seamless
+- our solutions need to human
+
+
+Python's dark corners
+---------------------
+Peter Lovett
+
+- whitespace can cause unexpected behaviour:
+
+  - run python -t to give warnings if you mix tabs and spaces
+  - python interprets a tab as 8 spaces
+
+- everything is an object
+
+  - builtin types (int, float, etc)
+  - functions
+  - modules
+  - use ``id(name)`` to see what a name is pointing to, e.g. ``id(a)``
+  - ``b = list(a)`` -> creates a copy of the object, in this case a list
+  - ``b = a -> b`` and a point to the same object
+  - ``is`` compares objects, ``==`` compares values
+
+- if you accidentally rebind a builtin, you can ``import __builtin__`` and
+  use it to access the builtin: ``a = __builtin__.str('hi')``
+- Python does not prevent accidental name creation, but there are testing
+  tools and IDEs that can help
+- scope is localised when you do any assignment within a function; trying to
+  use a global within a function then assigning in that function will cause
+  an ``unboundlocalvariable`` error
+- no void return type, so you don't get an error if you assign to something
+  you shouldn't it just returns ``None``
+- Fedora 23 to have Python 3 by defualt. Debian and Ubuntu will soon do the
+  same.
+
+
+Raspberry Pi hacks
+------------------
+Ruth Suehle
+
+- early 2006 concept based on Atmel ATmega644
+- designed for educational use
+- intended for Python but friendly for multiple languages
+- http://elinux.org/Main_Page has a wealth of PI info
+- Pi 2 has 40 GPIO as apposed to the Pi's 26, but the first 26 are in the same
+  order
+- find your Pi: ``cat /proc/cpuinfo`` -> revision number tells you the version
+- If you have Hynyx RAM it may cause problems
+- there is a display specifically for the Pi that uses the DSI output
+- Fedora ARM Installer for loading OSes on SD cards
+- you can use power bricks as a portable power source
+- dx.com
+- TP1 and TP2 are the pins for checking your power
+- use a powered hub for peripherals
+- https://www.raspberrypi.org/blog/raspberry-leaf/
+- use a case to protect your pi - lego works great
+- RaspBMC/XBMC is now Kodi
+- Running classic games works well on the Pi
+- *Raspberry Pi Hacks* written by Ruth Suehle and Tom Calloway
+- Pi wants 5v 1amp. No more, no less.
+
+
 Highlights
 ~~~~~~~~~~
 
