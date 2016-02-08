@@ -566,11 +566,3 @@ National Wool Museum
 --------------------
 Demonstration of rug weaving machine that uses hundreds of cardboard cards
 to create the design. Very cool!
-
-
-Highlights
-~~~~~~~~~~
-
-- Internet Archive documentation is not very good, apparently. Perhaps it could
-  be a fun upstream project?
-- Open Library for free content
