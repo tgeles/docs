@@ -9,3 +9,5 @@ Document repository
    :target: http://opensource.org/licenses/GPL-3.0
 
 A collection of documents on various subjects written by @kallimachos.
+
+http://kallimachos.github.io/docs/
