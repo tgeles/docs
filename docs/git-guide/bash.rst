@@ -41,23 +41,29 @@ Sample Scripts
 :ref:`repocheck`
 ----------------
 
-This script runs ``git status -s`` on each repository. It is helpful for
-checking if you have any work that has not been committed or pushed.
+Prints ``git status -s -b`` of repos in the listed directories if they have
+uncommitted changes or if they are not on the master branch.
+
+This script is helpful for checking if you have any work that has not been
+committed or pushed, and also for ensuring that you are on the master branches
+of each repo before attempting to merge from origin or upstream master.
 Note that the output is the short (-s) version. No message means that
-the working directory is clean. If you receive a message, run
-``git status`` on the indicated repository for full information.
+the working directory is clean and you are on the master branch. If you receive
+a message, run ``git status`` on the indicated repository for full information.
 
 Example Output:
 
 .. code::
 
    /docs/administration-guide
-
+   ## v10...origin/v10
    /docs/release-notes
-
    /docs/rest-api-guide
-
+   ## master...origin/master
+   M api-guide/index.rst
+   M api-guide/chapter1.rst
    /docs/user-guide
+
 
 :ref:`master`
 -------------
