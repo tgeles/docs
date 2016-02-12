@@ -14,19 +14,18 @@ Working with Local Branches
    * - git commit -m "*message*" *file*
      - commits changes in the specified file or directory to the local
        repository
-   * - git commit -m "*message*" -a
-     - adds all new files to the index and commits all changes to the local
+   * - git commit -a -m "*message*"
+     - adds all changed files to the index and commits them to the local
        repository
+   * - git commit --amend
+     - amend the previous commit. Use to update a commit message, or to update
+       a changed file in a commit before pushing.
    * - git stash
      - stashes current changes and sets branch to last commit. Useful for
        switching branches or pulling remote changes without having to commit
        local changes first.
    * - git stash apply
      - applies the changes stashed using the ``git stash`` command
-   * - git rebase -i master
-     - interactively combines multiple commits into a single commit and rebases
-       from master. ``pick`` the first commit listed, and enter ``squash`` for
-       the rest.
    * - git branch
      - displays local branches
    * - git branch -a
@@ -41,5 +40,9 @@ Working with Local Branches
      - deletes the specified local branch if it has been merged
    * - git branch -D *branch*
      - deletes the specified local branch regardless of its merge status
+   * - git remote -v
+     - lists current configured remotes for the fork
+   * - git remote add upstream git@github.com:*original_owner*/*original_repository*.git
+     - specifies a new remote upstream repository that will be synced with the fork
    * - git remote update --prune
      - updates list of remote branches on the local machine

@@ -8,7 +8,7 @@ Working with Remote Branches
 
    * - Command
      - Result
-   * - git checkout --track origin/\ *branch*
+   * - git checkout --track origin/*branch*
      - creates and checks out a local tracking branch for the specified remote
        branch
    * - git fetch origin
@@ -19,17 +19,14 @@ Working with Remote Branches
    * - git pull origin *branch*
      - fetches and merges the specified remote branch with the current local
        branch
-   * - git rebase -i origin/master
-     - interactively combines multiple commits into a single commit and rebases
-       from origin/master. ``pick`` the first commit listed, and enter
-       ``squash`` for the rest.
    * - git push
      - pushes all committed changes on all branches to the remote repo
    * - git push origin *branch1*:*branch2*
      - creates a remote branch *branch2* and pushes the local branch *branch1*
        to it
    * - git push origin :*branch*
-     - deletes the specified remote branch
-   * - git reset --hard origin/\ *branch*
+     - deletes the specified remote branch (note there is a space between
+       ``origin`` and ``:branch``)
+   * - git reset --hard origin/*branch*
      - resets the checked-out local branch to the status of the specified
        remote branch; running ``git fetch origin`` first is recommended
