@@ -41,3 +41,5 @@ Working with Local Branches
      - deletes the specified local branch if it has been merged
    * - git branch -D *branch*
      - deletes the specified local branch regardless of its merge status
+   * - git remote update --prune
+     - updates list of remote branches on the local machine
