@@ -1,0 +1,346 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Using Bash Scripts &mdash; Document Repository  documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Document Repository  documentation" href="../index.html"/>
+        <link rel="up" title="Git Guide" href="index.html"/>
+        <link rel="next" title="Scripts" href="scripts.html"/>
+        <link rel="prev" title="Merging Branches" href="merge.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Document Repository
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../events/index.html">Event Logs</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Git Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="local.html">Working with Local Branches</a></li>
+<li class="toctree-l2"><a class="reference internal" href="remote.html">Working with Remote Branches</a></li>
+<li class="toctree-l2"><a class="reference internal" href="merge.html">Merging Branches</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Using Bash Scripts</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#sample-scripts">Sample Scripts</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#repocheck"><code class="docutils literal"><span class="pre">repocheck</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#master"><code class="docutils literal"><span class="pre">master</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#branchlist"><code class="docutils literal"><span class="pre">branchlist</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pullall"><code class="docutils literal"><span class="pre">pullall</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="scripts.html">Scripts</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../rax/index.html">Rackspace Public Cloud</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Document Repository</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">Git Guide</a> &raquo;</li>
+      
+    <li>Using Bash Scripts</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/git-guide/bash.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="using-bash-scripts">
+<h1>Using Bash Scripts<a class="headerlink" href="#using-bash-scripts" title="Permalink to this headline">#</a></h1>
+<p>The following bash scripts can be used to run certain git commands
+across several repositories. These scripts can be run from any
+directory, and will return you to the directory in which you started.
+Creating aliases for your scripts for easy access is recommended.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">You must change <code class="docutils literal"><span class="pre">~/docs/*</span></code> in each script to the location of the git
+repositories on your local machine.</p>
+</div>
+<p><strong>Creating Bash Aliases</strong></p>
+<ol class="arabic">
+<li><p class="first">Create the script in a convenient location, for example
+<strong>~/scripts/</strong></p>
+</li>
+<li><p class="first">Make the script executable:</p>
+<p><code class="docutils literal"><span class="pre">$</span> <span class="pre">chmod</span> <span class="pre">a+x</span> <span class="pre">myscript.sh</span></code></p>
+</li>
+<li><p class="first">Open <strong>~/.bashrc</strong> and add an alias for the script:</p>
+<p><code class="docutils literal"><span class="pre">alias</span> <span class="pre">myscript='~/scripts/myscript.sh'</span></code></p>
+</li>
+<li><p class="first">Save the change, then reload the file for the current terminal
+session:</p>
+<p><code class="docutils literal"><span class="pre">$</span> <span class="pre">source</span> <span class="pre">~/.bashrc</span></code></p>
+</li>
+<li><p class="first">Run the script by using the alias on the command line:</p>
+<p><code class="docutils literal"><span class="pre">$</span> <span class="pre">myscript</span></code></p>
+</li>
+</ol>
+<div class="section" id="sample-scripts">
+<h2>Sample Scripts<a class="headerlink" href="#sample-scripts" title="Permalink to this headline">#</a></h2>
+<div class="section" id="repocheck">
+<h3><a class="reference internal" href="scripts.html#repocheck"><span>repocheck.sh</span></a><a class="headerlink" href="#repocheck" title="Permalink to this headline">#</a></h3>
+<p>Prints <code class="docutils literal"><span class="pre">git</span> <span class="pre">status</span> <span class="pre">-s</span> <span class="pre">-b</span></code> of repos in the listed directories if they have
+uncommitted changes or if they are not on the master branch.</p>
+<p>This script is helpful for checking if you have any work that has not been
+committed or pushed, and also for ensuring that you are on the master branches
+of each repo before attempting to merge from origin or upstream master.
+Note that the output is the short (-s) version. No message means that
+the working directory is clean and you are on the master branch. If you receive
+a message, run <code class="docutils literal"><span class="pre">git</span> <span class="pre">status</span></code> on the indicated repository for full information.</p>
+<p>Example Output:</p>
+<div class="code highlight-python"><div class="highlight"><pre><span></span>/docs/administration-guide
+## v10...origin/v10
+/docs/release-notes
+/docs/rest-api-guide
+## master...origin/master
+M api-guide/index.rst
+M api-guide/chapter1.rst
+/docs/user-guide
+</pre></div>
+</div>
+</div>
+<div class="section" id="master">
+<h3><a class="reference internal" href="scripts.html#master"><span>master.sh</span></a><a class="headerlink" href="#master" title="Permalink to this headline">#</a></h3>
+<p>This script runs <code class="docutils literal"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">master</span></code> on all repositories. Note that
+if you run this command with uncommitted changes in non-master branches,
+those changes will be copied to their corresponding master branch.</p>
+<p>Example Output:</p>
+<div class="code highlight-python"><div class="highlight"><pre><span></span>/docs/administration-guide
+Already on &#39;master&#39;
+
+/docs/release-notes
+Already on &#39;master&#39;
+
+/docs/rest-api-guide
+Already on &#39;master&#39;
+
+/docs/user-guide
+Already on &#39;master&#39;
+</pre></div>
+</div>
+</div>
+<div class="section" id="branchlist">
+<h3><a class="reference internal" href="scripts.html#branchlist"><span>branchlish.sh</span></a><a class="headerlink" href="#branchlist" title="Permalink to this headline">#</a></h3>
+<p>This script runs <code class="docutils literal"><span class="pre">git</span> <span class="pre">branch</span> <span class="pre">-a</span></code> on all repositories. It shows you all
+the local and remote branches, and indicates which branches you have
+checked out. Remove the <code class="docutils literal"><span class="pre">-a</span></code> option to view only local branches.</p>
+<p>Example Output:</p>
+<div class="code highlight-python"><div class="highlight"><pre><span></span>/docs/administration-guide
+* master
+  remotes/origin/1.0
+  remotes/origin/1.1
+  remotes/origin/master
+
+/docs/release-notes
+  Enterprise
+  Online
+* master
+  remotes/origin/Enterprise
+  remotes/origin/Online
+  remotes/origin/master
+
+/docs/rest-api-guide
+  Enterprise
+* master
+  remotes/origin/Enterprise
+  remotes/origin/master
+
+/docs/user-guide
+  Enterprise
+* master
+  remotes/origin/Enterprise
+  remotes/origin/master
+</pre></div>
+</div>
+</div>
+<div class="section" id="pullall">
+<h3><a class="reference internal" href="scripts.html#pullall"><span>pullall.sh</span></a><a class="headerlink" href="#pullall" title="Permalink to this headline">#</a></h3>
+<p>This script runs <code class="docutils literal"><span class="pre">git</span> <span class="pre">pull</span></code> on all remote repositories. It is helpful
+for pulling down changes from all the remote repositories in one action.</p>
+<p>Example Output:</p>
+<div class="code highlight-python"><div class="highlight"><pre><span></span>/docs/administration-guide
+Already up-to-date.
+
+/docs/release-notes
+Already up-to-date.
+
+/docs/REST-api-guide
+Already up-to-date.
+
+/docs/user-guide
+Already up-to-date.
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="scripts.html" class="btn btn-neutral float-right" title="Scripts" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="merge.html" class="btn btn-neutral" title="Merging Branches" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Brian Moss.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

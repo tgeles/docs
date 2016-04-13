@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Git Guide &mdash; Document Repository  documentation</title>
+  <title>Working with Local Branches &mdash; Document Repository  documentation</title>
   
 
   
@@ -31,8 +31,9 @@
 
   
     <link rel="top" title="Document Repository  documentation" href="../index.html"/>
-        <link rel="next" title="Introduction" href="introduction.html"/>
-        <link rel="prev" title="PyConAu Brisbane August 2015" href="../events/pycon2015.html"/> 
+        <link rel="up" title="Git Guide" href="index.html"/>
+        <link rel="next" title="Working with Remote Branches" href="remote.html"/>
+        <link rel="prev" title="Introduction" href="introduction.html"/> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -79,9 +80,9 @@
             
                 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../events/index.html">Event Logs</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">Git Guide</a><ul>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Git Guide</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="introduction.html">Introduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="local.html">Working with Local Branches</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Working with Local Branches</a></li>
 <li class="toctree-l2"><a class="reference internal" href="remote.html">Working with Remote Branches</a></li>
 <li class="toctree-l2"><a class="reference internal" href="merge.html">Merging Branches</a></li>
 <li class="toctree-l2"><a class="reference internal" href="bash.html">Using Bash Scripts</a></li>
@@ -119,11 +120,13 @@
   <ul class="wy-breadcrumbs">
     <li><a href="../index.html">Docs</a> &raquo;</li>
       
-    <li>Git Guide</li>
+          <li><a href="index.html">Git Guide</a> &raquo;</li>
+      
+    <li>Working with Local Branches</li>
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="../_sources/git-guide/index.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/git-guide/local.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -133,30 +136,74 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="git-guide">
-<h1>Git Guide<a class="headerlink" href="#git-guide" title="Permalink to this headline">#</a></h1>
-<p>A basic guide to Git version control written by &#64;kallimachos.</p>
-<p>This guide also describes some sample Bash scripts that may make your life
-easier.</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="local.html">Working with Local Branches</a></li>
-<li class="toctree-l1"><a class="reference internal" href="remote.html">Working with Remote Branches</a></li>
-<li class="toctree-l1"><a class="reference internal" href="merge.html">Merging Branches</a></li>
-<li class="toctree-l1"><a class="reference internal" href="bash.html">Using Bash Scripts</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="bash.html#sample-scripts">Sample Scripts</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="scripts.html">Scripts</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="scripts.html#repocheck-sh">repocheck.sh</a></li>
-<li class="toctree-l2"><a class="reference internal" href="scripts.html#master-sh">master.sh</a></li>
-<li class="toctree-l2"><a class="reference internal" href="scripts.html#branchlish-sh">branchlish.sh</a></li>
-<li class="toctree-l2"><a class="reference internal" href="scripts.html#pullall-sh">pullall.sh</a></li>
-</ul>
-</li>
-</ul>
-</div>
+  <div class="section" id="working-with-local-branches">
+<h1>Working with Local Branches<a class="headerlink" href="#working-with-local-branches" title="Permalink to this headline">#</a></h1>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Command</th>
+<th class="head">Result</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>git add <em>file</em></td>
+<td>adds the specified, untracked file to the index. Also used to update
+files to be committed after fixing merge conflicts.</td>
+</tr>
+<tr class="row-odd"><td>git commit -m &#8220;<em>message</em>&#8221; <em>file</em></td>
+<td>commits changes in the specified file or directory to the local
+repository</td>
+</tr>
+<tr class="row-even"><td>git commit -a -m &#8220;<em>message</em>&#8220;</td>
+<td>adds all changed files to the index and commits them to the local
+repository</td>
+</tr>
+<tr class="row-odd"><td>git commit &#8211;amend</td>
+<td>amend the previous commit. Use to update a commit message, or to update
+a changed file in a commit before pushing.</td>
+</tr>
+<tr class="row-even"><td>git stash</td>
+<td>stashes current changes and sets branch to last commit. Useful for
+switching branches or pulling remote changes without having to commit
+local changes first.</td>
+</tr>
+<tr class="row-odd"><td>git stash apply</td>
+<td>applies the changes stashed using the <code class="docutils literal"><span class="pre">git</span> <span class="pre">stash</span></code> command</td>
+</tr>
+<tr class="row-even"><td>git branch</td>
+<td>displays local branches</td>
+</tr>
+<tr class="row-odd"><td>git branch -a</td>
+<td>displays all local and remote branches</td>
+</tr>
+<tr class="row-even"><td>git branch <em>branch</em></td>
+<td>creates a new local branch with the specified name</td>
+</tr>
+<tr class="row-odd"><td>git checkout <em>branch</em></td>
+<td>checks out the specified local branch. If you checkout another branch
+without committing changes in the current branch, the uncommitted files
+will be copied to the new branch.</td>
+</tr>
+<tr class="row-even"><td>git branch -d <em>branch</em></td>
+<td>deletes the specified local branch if it has been merged</td>
+</tr>
+<tr class="row-odd"><td>git branch -D <em>branch</em></td>
+<td>deletes the specified local branch regardless of its merge status</td>
+</tr>
+<tr class="row-even"><td>git remote -v</td>
+<td>lists current configured remotes for the fork</td>
+</tr>
+<tr class="row-odd"><td>git remote add upstream <a class="reference external" href="mailto:git&#37;&#52;&#48;github&#46;com">git<span>&#64;</span>github<span>&#46;</span>com</a>:<em>original_owner</em>/<em>original_repository</em>.git</td>
+<td>specifies a new remote upstream repository that will be synced with the fork</td>
+</tr>
+<tr class="row-even"><td>git remote update &#8211;prune</td>
+<td>updates list of remote branches on the local machine</td>
+</tr>
+</tbody>
+</table>
 </div>
 
 
@@ -166,10 +213,10 @@ easier.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="introduction.html" class="btn btn-neutral float-right" title="Introduction" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="remote.html" class="btn btn-neutral float-right" title="Working with Remote Branches" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../events/pycon2015.html" class="btn btn-neutral" title="PyConAu Brisbane August 2015" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="introduction.html" class="btn btn-neutral" title="Introduction" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

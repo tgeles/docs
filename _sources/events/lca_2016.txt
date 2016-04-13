@@ -21,8 +21,8 @@ Alex Settle
 - technical writing is all about communicating with people
 - when in an office, this is facilitated by being able to interact face-to-face
   with people
-- "explosive introversion" - the desire to be on your own after short social
-  interactions
+- "explosive introversion" - the sudden desire to be on your own during
+  social interactions
 - *Healthy Operations* on YouTube
 
 
@@ -60,7 +60,7 @@ Lucy Bopf
 
   - establish requirements
   - establish time frame
-  - don't overcommit
+  - don't over commit
   - 90% research and planning, 10% writing
 
 - Accuracy, both technical and writing, helps prevent debt
@@ -115,7 +115,7 @@ Lily Ryan
 - what is 'open'? Removing barriers: open = accessible
 - how can a workshop provide laptops for people who want to learn?
 - venues should be accessible for mobility-impaired participants
-- workshops should be available in multiple langauages
+- workshops should be available in multiple languages
 - access for hearing and sight impaired people
 - outreach/advertising is important, with accessible features highlighted
 
@@ -138,7 +138,7 @@ Jon Manning and Paris Buttfield-Addison
   ways
 - games are engaging
 - if creating games at a hackathon, do it within the context of the event
-- appliance battle pokemon style based on government data star ratings
+- appliance battle Pokemon style based on government data star ratings
 - match the department to the area multiplayer matching game
 - games are based on systems, and if you can find a system in data, you can
   make a game out of it
@@ -159,8 +159,8 @@ Jon Manning and Paris Buttfield-Addison
 
   - but multiplayer is hard
   - do it locally, or over a network. Do not use the internet.
-  - real time is hard, turn based is better. If you must do real time
-  - keep it simple
+  - real time is hard, turn based is better. If you must do real time keep
+    it simple
 
 - at a hackathon you can do things you wouldn't get away with in production
 
@@ -175,9 +175,9 @@ Jon Manning and Paris Buttfield-Addison
 - time is your enemy but not in the way you think
 
   - fosters deadline-oriented thinking
-  - all nighters are deceptive; you will never do your best work on an all
-    nighter so go home at night and arrive rested at a decent time
-  - cutting things mercilessly is a great way of keeping things in time
+  - all-nighters are deceptive; you will never do your best work on an
+    all-nighter so go home at night and arrive rested at a decent time
+  - cutting things mercilessly is a great way of keeping things on schedule
 
 - raising engagement in a topic, rather than going in depth, is usually enough
 - the best way to make a game is to make a game, but games are hard, big
@@ -194,7 +194,7 @@ Dan Hawke
 - anyone anywhere can request information from Australia
 - each Australian state has its own privacy laws, but are governed by the same
   national laws
-- http://alaveteli.org/ is an opensource website for making information
+- http://alaveteli.org/ is an open source website for making information
   requests
 - example: requesting passenger numbers from Auckland transport
 
@@ -303,8 +303,7 @@ Andrew Stuart
 
 - unikernel = stripped down operating system running a single application
 - small, fast to start
-- there is no user log in to a unikernel, which prevents that as a security
-  risk
+- there is no user log in to a unikernel, which provides security benefits
 
 
 Challenges when scaling: Adventures in Swift's sharding
@@ -320,7 +319,7 @@ Matt Oliver
 - can use commodity hardware
 - flexible
 - multi-region
-- customisable (open source)
+- customizable (open source)
 - storage policies and erasure coding
 - 3 basic resources in Swift that are all treated as objects:
 
@@ -335,7 +334,7 @@ Matt Oliver
    - replica count (even in EC)
    - part power - defines the number of partitions
    - partitions - represents a place in the ring
-   - primary and handoff nodes
+   - primary and hand-off nodes
 
 - Swift's hashing scales well
 
@@ -353,7 +352,7 @@ Michael Borthwick
   - minefield would have foot switches in the sand connected to an interface,
     with connected sound as well
   - but they didn't have any of these parts so Michael used an Arduino as the
-    in interface
+    interface
   - bright LEDs are helpful when testing so you know for sure if a signal
     is coming through
 
@@ -365,9 +364,9 @@ Michael Borthwick
 - RAAF cut-away engine that visitors could watch operate for 30 seconds at a
   time
 
-  - made custom board from various arduino add ons
-  - was able to use open source libraries for arduino add ons to build
-    the
+  - made custom board from various arduino add-ons
+  - was able to use open source libraries for arduino add-ons to build
+    the code
 
 - AC/DC exhibit at Art Gallery Victoria
 
@@ -405,7 +404,7 @@ John Dickinson
 - erasure codes store multiple copies through fractions of the data rather
   than storing complete copies
 - represent data as coefficients of polynomials
-- even if you lose some parts, you can reconstruct them using the polynomial
+- even if you lose some parts, you can reconstruct them using the polynomial:
 
 .. code::
 
@@ -497,9 +496,9 @@ Genevieve Bell
 
 - started career as an anthropologist at Stanford before taking a position at
   Intel in 1998
-- intially Intel wanted her to find out what women and the "rest of the world",
-  aka not America, want. Basically, what do humans need and want, and how can
-  technology meet those needs and wants.
+- initially Intel wanted her to find out what women and the "rest of the
+  world", aka not America, want. Basically, what do humans need and want, and
+  how can technology meet those needs and wants.
 - our present is messy and myriad
 - context matters: we don't necessarily want everything to be seamless
 - our solutions need to human
@@ -533,7 +532,7 @@ Peter Lovett
   an ``unboundlocalvariable`` error
 - no void return type, so you don't get an error if you assign to something
   you shouldn't it just returns ``None``
-- Fedora 23 to have Python 3 by defualt. Debian and Ubuntu will soon do the
+- Fedora 23 to have Python 3 by default. Debian and Ubuntu will soon do the
   same.
 
 
@@ -556,7 +555,7 @@ Ruth Suehle
 - TP1 and TP2 are the pins for checking your power
 - use a powered hub for peripherals
 - https://www.raspberrypi.org/blog/raspberry-leaf/
-- use a case to protect your pi - lego works great
+- use a case to protect your Pi - lego works great
 - RaspBMC/XBMC is now Kodi
 - Running classic games works well on the Pi
 - *Raspberry Pi Hacks* written by Ruth Suehle and Tom Calloway
@@ -567,11 +566,3 @@ National Wool Museum
 --------------------
 Demonstration of rug weaving machine that uses hundreds of cardboard cards
 to create the design. Very cool!
-
-
-Highlights
-~~~~~~~~~~
-
-- Internet Archive documentation is not very good, apparently. Perhaps it could
-  be a fun upstream project?
-- Open Library for free content

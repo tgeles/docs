@@ -1,0 +1,399 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Running DevStack on the Rackspace public cloud &mdash; Document Repository  documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Document Repository  documentation" href="../index.html"/>
+        <link rel="up" title="Rackspace Public Cloud" href="index.html"/>
+        <link rel="prev" title="Rackspace Public Cloud" href="index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Document Repository
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../events/index.html">Event Logs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../git-guide/index.html">Git Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Rackspace Public Cloud</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="">Running DevStack on the Rackspace public cloud</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#centos-devstack-on-rax">CentOS DevStack on RAX</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Document Repository</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">Rackspace Public Cloud</a> &raquo;</li>
+      
+    <li>Running DevStack on the Rackspace public cloud</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/rax/devstack-centos.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="running-devstack-on-the-rackspace-public-cloud">
+<h1>Running DevStack on the Rackspace public cloud<a class="headerlink" href="#running-devstack-on-the-rackspace-public-cloud" title="Permalink to this headline">#</a></h1>
+<p>This document describes how to run
+<a class="reference external" href="http://docs.openstack.org/developer/devstack/">DevStack</a> on the
+<a class="reference external" href="https://mycloud.rackspace.com/">Rackspace public cloud</a>.</p>
+<p>Some alternative options are:</p>
+<ul class="simple">
+<li><a class="reference external" href="https://ssl.rcbops.com/mediawiki/index.php/Single_node_devstack">rcbops single node devstack instructions</a></li>
+<li><a class="reference external" href="http://docs.openstack.org/developer/openstack-ansible/developer-docs/quickstart-aio.html">openstack-ansible all-in-one</a></li>
+</ul>
+<div class="section" id="centos-devstack-on-rax">
+<h2>CentOS DevStack on RAX<a class="headerlink" href="#centos-devstack-on-rax" title="Permalink to this headline">#</a></h2>
+<ol class="arabic">
+<li><p class="first">Create a CentOS 7 server using the 4GB General Purpose v1 flavor
+with an appropriate ssh key, and the standard public and service
+networks.</p>
+</li>
+<li><p class="first">Access the machine using <strong>ssh</strong> as root:</p>
+<div class="code highlight-python"><div class="highlight"><pre><span></span>$ ssh root@123.456.789
+</pre></div>
+</div>
+</li>
+<li><p class="first">Update the machine, then clone the devstack repository:</p>
+<div class="code highlight-python"><div class="highlight"><pre><span></span><span class="c1"># yum update -y</span>
+<span class="c1"># git clone https://git.openstack.org/openstack-dev/devstack</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Create the stack user by running the <strong>create-stack-user.sh</strong>
+script:</p>
+<div class="code highlight-python"><div class="highlight"><pre><span></span><span class="c1"># ./devstack/tools/create-stack-user.sh</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Switch to the stack user and clone the devstack repository again:</p>
+<div class="code highlight-python"><div class="highlight"><pre><span></span># su - stack
+$ git clone https://git.openstack.org/openstack-dev/devstack
+</pre></div>
+</div>
+</li>
+<li><p class="first">Install DevStack by running the <strong>stack.sh</strong> script:</p>
+<div class="code highlight-python"><div class="highlight"><pre><span></span>$ ./devstack/stack.sh
+</pre></div>
+</div>
+</li>
+<li><p class="first">Specify passwords when required by the installation script.</p>
+</li>
+<li><p class="first">After the installation finishes, logout as the <strong>stack</strong> user:</p>
+<div class="code highlight-python"><div class="highlight"><pre><span></span>$ exit
+</pre></div>
+</div>
+</li>
+<li><p class="first">As root, create an <strong>admin-openrc.sh</strong> file in <strong>/root</strong> with the
+following contents. Sourcing this file sets certain environment
+variables to save typing when running openstack commands. Substitute
+the password and IP address of your devstack:</p>
+<div class="code highlight-python"><div class="highlight"><pre><span></span>export OS_PROJECT_DOMAIN_ID=default
+export OS_USER_DOMAIN_ID=default
+export OS_PROJECT_NAME=admin
+export OS_TENANT_NAME=admin
+export OS_USERNAME=admin
+export OS_PASSWORD=PASSWORD
+export OS_AUTH_URL=http://123.456.789:5000/v3
+export OS_IDENTITY_API_VERSION=3``
+</pre></div>
+</div>
+</li>
+<li><p class="first">Source the <strong>admin-openrc.sh</strong> file:</p>
+<div class="code highlight-python"><div class="highlight"><pre><span></span><span class="c1"># source admin-openrc.sh</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Generate and add a key pair:</p>
+<div class="code highlight-python"><div class="highlight"><pre><span></span><span class="c1"># ssh-keygen -q -N &quot;&quot;</span>
+<span class="c1"># nova keypair-add --pub-key .ssh/id_rsa.pub mykey</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Verify addition of the key pair:</p>
+<div class="code highlight-python"><div class="highlight"><pre><span></span># nova keypair-list
++-------+-------------------------------------------------+
+| Name  | Fingerprint                                     |
++-------+-------------------------------------------------+
+| mykey | 6c:74:ec:3a:08:05:4e:9e:21:22:a6:dd:b2:62:b8:28 |
++-------+-------------------------------------------------+
+</pre></div>
+</div>
+</li>
+<li><p class="first">Add ping and SSH security rules:</p>
+<div class="code highlight-python"><div class="highlight"><pre><span></span># nova secgroup-add-rule default icmp -1 -1 0.0.0.0/0
++-------------+-----------+---------+-----------+--------------+
+| IP Protocol | From Port | To Port | IP Range | Source Group  |
++-------------+-----------+---------+-----------+--------------+
+| icmp        | -1        | -1      | 0.0.0.0/0 |              |
++-------------+-----------+---------+-----------+--------------+
+
+# nova secgroup-add-rule default tcp 22 22 0.0.0.0/0
++-------------+-----------+---------+-----------+--------------+
+| IP Protocol | From Port | To Port | IP Range  | Source Group |
++-------------+-----------+---------+-----------+--------------+
+| tcp         | 22        | 22      | 0.0.0.0/0 |              |
++-------------+-----------+---------+-----------+--------------+
+</pre></div>
+</div>
+</li>
+<li><p class="first">Add a cirros image to the Glance repository:</p>
+<div class="code highlight-python"><div class="highlight"><pre><span></span># wget http://download.cirros-cloud.net/0.3.4/cirros-0.3.4-x86_64-disk.img
+# glance image-create --name &quot;cirros&quot; \
+  --file cirros-0.3.4-x86_64-disk.img --disk-format qcow2 \
+  --container-format bare --visibility public --progress
+</pre></div>
+</div>
+</li>
+<li><p class="first">List available images:</p>
+<div class="code highlight-python"><div class="highlight"><pre><span></span># nova image-list
++--------------------------------------+--------+--------+--------+
+| ID                                   | Name   | Status | Server |
++--------------------------------------+--------+--------+--------+
+| 38047887-61a7-41ea-9b49-27987d5e8bb9 | cirros | ACTIVE |        |
++--------------------------------------+--------+--------+--------+
+</pre></div>
+</div>
+</li>
+<li><p class="first">List available flavors:</p>
+<div class="code highlight-python"><div class="highlight"><pre><span></span># nova flavor-list
++-----+-----------+-----------+------+-----------+------+-------+-------------+-----------+
+| ID  | Name      | Memory_MB | Disk | Ephemeral | Swap | VCPUs | RXTX_Factor | Is_Public |
++-----+-----------+-----------+------+-----------+------+-------+-------------+-----------+
+| 1   | m1.tiny   | 512       | 1    | 0         |      | 1     | 1.0         | True      |
+| 2   | m1.small  | 2048      | 20   | 0         |      | 1     | 1.0         | True      |
+| 3   | m1.medium | 4096      | 40   | 0         |      | 2     | 1.0         | True      |
+| 4   | m1.large  | 8192      | 80   | 0         |      | 4     | 1.0         | True      |
+| 5   | m1.xlarge | 16384     | 160  | 0         |      | 8     | 1.0         | True      |
++-----+-----------+-----------+------+-----------+------+-------+-------------+-----------+
+</pre></div>
+</div>
+</li>
+<li><p class="first">List available security groups:</p>
+<div class="code highlight-python"><div class="highlight"><pre><span></span># nova secgroup-list
++--------------------------------------+---------+-------------+
+| Id                                   | Name    | Description |
++--------------------------------------+---------+-------------+
+| ad8d4ea5-3cad-4f7d-b164-ada67ec59473 | default | default     |
++--------------------------------------+---------+-------------+
+</pre></div>
+</div>
+</li>
+<li><p class="first">Launch an instance:</p>
+<div class="code highlight-python"><div class="highlight"><pre><span></span># nova boot --flavor m1.tiny --image cirros --security-group default \
+  --key-name mykey myinstance
++--------------------------------------+-----------------------------------------------+
+| Property                             | Value                                         |
++--------------------------------------+-----------------------------------------------+
+| OS-DCF:diskConfig                    | MANUAL                                        |
+| OS-EXT-AZ:availability_zone          |                                               |
+| OS-EXT-SRV-ATTR:host                 | -                                             |
+| OS-EXT-SRV-ATTR:hostname             | myinstance                                    |
+| OS-EXT-SRV-ATTR:hypervisor_hostname  | -                                             |
+| OS-EXT-SRV-ATTR:instance_name        | instance-00000002                             |
+| OS-EXT-SRV-ATTR:kernel_id            |                                               |
+| OS-EXT-SRV-ATTR:launch_index         | 0                                             |
+| OS-EXT-SRV-ATTR:ramdisk_id           |                                               |
+| OS-EXT-SRV-ATTR:reservation_id       | r-su40i1k4                                    |
+| OS-EXT-SRV-ATTR:root_device_name     | -                                             |
+| OS-EXT-SRV-ATTR:user_data            | -                                             |
+| OS-EXT-STS:power_state               | 0                                             |
+| OS-EXT-STS:task_state                | scheduling                                    |
+| OS-EXT-STS:vm_state                  | building                                      |
+| OS-SRV-USG:launched_at               | -                                             |
+| OS-SRV-USG:terminated_at             | -                                             |
+| accessIPv4                           |                                               |
+| accessIPv6                           |                                               |
+| adminPass                            | u8uZM35FJoTE                                  |
+| config_drive                         |                                               |
+| created                              | 2015-10-26T05:50:14Z                          |
+| flavor                               | m1.tiny (1)                                   |
+| hostId                               |                                               |
+| id                                   | 279efcf9-f168-4b1d-a1d2-4424de7c9b25          |
+| image                                | cirros (bed0c617-77f8-4e90-8310-f65436c51a84) |
+| key_name                             | mykey                                         |
+| metadata                             | {}                                            |
+| name                                 | myinstance                                    |
+| os-extended-volumes:volumes_attached | []                                            |
+| progress                             | 0                                             |
+| security_groups                      | default                                       |
+| status                               | BUILD                                         |
+| tenant_id                            | d8859cbbd5924a159b569f7f57c3ab8c              |
+| updated                              | 2015-10-26T05:50:15Z                          |
+| user_id                              | 214c9d984a084cd6b92e89bafc755c9c              |
++--------------------------------------+-----------------------------------------------+
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="Rackspace Public Cloud" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Brian Moss.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

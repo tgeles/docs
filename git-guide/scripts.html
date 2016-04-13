@@ -1,0 +1,303 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Scripts &mdash; Document Repository  documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Document Repository  documentation" href="../index.html"/>
+        <link rel="up" title="Git Guide" href="index.html"/>
+        <link rel="next" title="Rackspace Public Cloud" href="../rax/index.html"/>
+        <link rel="prev" title="Using Bash Scripts" href="bash.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Document Repository
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../events/index.html">Event Logs</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Git Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="local.html">Working with Local Branches</a></li>
+<li class="toctree-l2"><a class="reference internal" href="remote.html">Working with Remote Branches</a></li>
+<li class="toctree-l2"><a class="reference internal" href="merge.html">Merging Branches</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bash.html">Using Bash Scripts</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Scripts</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#repocheck-sh">repocheck.sh</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#master-sh">master.sh</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#branchlish-sh">branchlish.sh</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pullall-sh">pullall.sh</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../rax/index.html">Rackspace Public Cloud</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Document Repository</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">Git Guide</a> &raquo;</li>
+      
+    <li>Scripts</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/git-guide/scripts.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="scripts">
+<h1>Scripts<a class="headerlink" href="#scripts" title="Permalink to this headline">#</a></h1>
+<div class="section" id="repocheck-sh">
+<span id="repocheck"></span><h2>repocheck.sh<a class="headerlink" href="#repocheck-sh" title="Permalink to this headline">#</a></h2>
+<div class="code highlight-python"><div class="highlight"><pre><span></span>#!/bin/bash
+
+# Print ``git status -s -b`` of repos in the listed directories if they have
+# uncommitted changes or if they are not on the master branch.
+
+repos=(openstack rpcdocs code code/python scripts)
+
+echo
+
+for item in ${repos[@]}; do
+    root=~/$item/*
+    for dir in $root; do
+        if test -d $dir &amp;&amp; test -e $dir/.git; then
+            cd $dir &amp;&amp; echo $dir
+            branch=$(git status -s -b)
+            if ! [ &quot;$branch&quot; = &quot;## master...origin/master&quot; ]; then
+                git status -s -b
+            fi
+        fi
+    done
+done
+echo
+</pre></div>
+</div>
+</div>
+<div class="section" id="master-sh">
+<span id="master"></span><h2>master.sh<a class="headerlink" href="#master-sh" title="Permalink to this headline">#</a></h2>
+<div class="code highlight-python"><div class="highlight"><pre><span></span>#!/bin/bash
+
+# This script runs &#39;git checkout master&#39; on all repositories. Note that
+# if you run this command with uncommitted changes in non-master branches,
+# those changes will be copied to their corresponding master branch.
+
+# You must change ~/docs/* to the location of the git repositories on your
+# local machine.
+
+for dir in ~/docs/*; do
+    if test -d $dir &amp;&amp; test -e $dir/.git; then
+        cd $dir &amp;&amp; echo $dir
+        git checkout master &amp;&amp; echo
+    fi
+done
+</pre></div>
+</div>
+</div>
+<div class="section" id="branchlish-sh">
+<span id="branchlist"></span><h2>branchlish.sh<a class="headerlink" href="#branchlish-sh" title="Permalink to this headline">#</a></h2>
+<div class="code highlight-python"><div class="highlight"><pre><span></span>#!/bin/bash
+
+# This script runs &#39;git branch -a&#39; on all repositories. It shows you all
+# the local and remote branches, and indicates which branches you have
+# checked out. Remove the &#39;-a&#39; option to view only local branches.
+
+# You must change ~/docs/* to the location of the git repositories on your
+# local machine.
+
+for dir in ~/docs/*; do
+    if test -d $dir &amp;&amp; test -e $dir/.git; then
+        cd $dir &amp;&amp; echo $dir
+        git branch -a &amp;&amp; echo
+    fi
+done
+</pre></div>
+</div>
+</div>
+<div class="section" id="pullall-sh">
+<span id="pullall"></span><h2>pullall.sh<a class="headerlink" href="#pullall-sh" title="Permalink to this headline">#</a></h2>
+<div class="code highlight-python"><div class="highlight"><pre><span></span>#!/bin/bash
+
+# This script runs &#39;git pull&#39; on all remote repositories. It is helpful
+# for pulling down changes from all the remote repositories in one action.
+
+# You must change ~/docs/* to the location of the git repositories on your
+# local machine.
+
+for dir in ~/docs/*; do
+    if test -d $dir &amp;&amp; test -e $dir/.git; then
+        cd $dir &amp;&amp; echo $dir
+        git pull &amp;&amp; echo
+    fi
+done
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../rax/index.html" class="btn btn-neutral float-right" title="Rackspace Public Cloud" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="bash.html" class="btn btn-neutral" title="Using Bash Scripts" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Brian Moss.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
