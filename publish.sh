@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# Helper script for publishing RPC documentation to github.rackspace.com.
-# Run from the master branch of the internal RPC repository.
+# Helper script for publishing documentation to a gh-page branch.
+# Run from the master branch of the repository to publish.
 
 # set repo root directory
 GITDIR=`git rev-parse --show-toplevel`
