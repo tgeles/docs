@@ -45,6 +45,7 @@ Big Tent: One Year Later
 Monty Taylor and Thierry Carrez
 
 The Good:
+
 - we are no longer stuck when trying to get projects from nascent to a part of
   OpenStack. Requirements for inclusion were too high before Big Tent.
 - more collaboration. Disparate projects with the same goal are merging and
@@ -57,6 +58,7 @@ The Good:
 - adding more projects helped the TC to focus on selected projects
 
 The Bad:
+
 - single-vendor. TC no longer requires projects to involve multiple vendors
 - confusion. The plethora of projects can be confusing for people new to the
   OStack ecosystem.
@@ -67,6 +69,7 @@ The Bad:
   accepted into the tent need to be removed when they are no longer maintained.
 
 Next challenges:
+
 - improving the end-user experience with the Big Tent
 - rethinking the Design Summit to include Bit Tent
 
@@ -82,9 +85,10 @@ Ideal scenario
 #. build docs locally
 #. publish html to helpdesk
 #. go contribute straight upstream
-#. receive patches, too
+#. receive patches
 
 Publishing
+
 - tox -> Sphinx -> Zendesk REST API
 - https://github.com/dreamhost/zendesk-publish-script
 - YAML file that nests files-to-publish inside the route for where they should
