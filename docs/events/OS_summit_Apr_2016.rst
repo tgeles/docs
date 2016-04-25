@@ -2,6 +2,8 @@
 OpenStack Summit Austin April 2016
 ==================================
 
+.. image:: images/Austin_small.jpg
+
 Monday April 25, 2016
 ~~~~~~~~~~~~~~~~~~~~~
 
