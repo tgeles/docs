@@ -20,6 +20,21 @@ Mitaka: Beyond the Release Notes
 --------------------------------
 https://etherpad.openstack.org/p/AUS-ops-Beyond-the-Release-Notes
 
+Meet the OpenStack Personas (So Far)
+------------------------------------
+
+- Workshop @Rackspace Austin
+  - Attributes
+  - cloud roles
+
+- Workshop @IBM Design Austin
+  - cloud adoption stages
+  - OStack ecosystem
+  - cloud roles
+
+- integrate personas into your discussions
+- participate in activies to document, validate, and update personas
+
 
 Tuesday April 26, 2016
 ~~~~~~~~~~~~~~~~~~~~~~
