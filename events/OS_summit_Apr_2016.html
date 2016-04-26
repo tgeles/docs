@@ -185,7 +185,7 @@ content</li>
 </ul>
 </li>
 <li>integrate personas into your discussions</li>
-<li>participate in activies to document, validate, and update personas</li>
+<li>participate in activities to document, validate, and update personas</li>
 <li>these different roles tend to emerge as a company gets bigger. Scale of an
 organization impacts the diversity of roles.</li>
 </ul>
@@ -193,7 +193,7 @@ organization impacts the diversity of roles.</li>
 <div class="section" id="big-tent-one-year-later">
 <h3>Big Tent: One Year Later<a class="headerlink" href="#big-tent-one-year-later" title="Permalink to this headline">#</a></h3>
 <p>Monty Taylor and Thierry Carrez</p>
-<p>The Good:</p>
+<p><strong>The Good</strong></p>
 <ul class="simple">
 <li>we are no longer stuck when trying to get projects from nascent to a part of
 OpenStack. Requirements for inclusion were too high before Big Tent.</li>
@@ -206,7 +206,7 @@ get a foothold and demonstrate they are better.</li>
 <li>forced us to document the OpenStack way</li>
 <li>adding more projects helped the TC to focus on selected projects</li>
 </ul>
-<p>The Bad:</p>
+<p><strong>The Bad</strong></p>
 <ul class="simple">
 <li>single-vendor. TC no longer requires projects to involve multiple vendors</li>
 <li>confusion. The plethora of projects can be confusing for people new to the
@@ -217,7 +217,7 @@ established processes that do not match the Big Tent requirements</li>
 <li>cleaning up the tent is difficult and will take time. Some projects that were
 accepted into the tent need to be removed when they are no longer maintained.</li>
 </ul>
-<p>Next challenges:</p>
+<p><strong>Next challenges</strong></p>
 <ul class="simple">
 <li>improving the end-user experience with the Big Tent</li>
 <li>rethinking the Design Summit to include Bit Tent</li>
@@ -230,13 +230,15 @@ accepted into the tent need to be removed when they are no longer maintained.</l
 <li>How to instruct customers with constraints (small team)</li>
 <li>have to be smart: re-use, automate, collaborate</li>
 </ul>
-<p>Ideal scenario
-#. pull from upstream
-#. build docs locally
-#. publish html to helpdesk
-#. go contribute straight upstream
-#. receive patches</p>
-<p>Publishing</p>
+<p><strong>Ideal scenario</strong></p>
+<ol class="arabic simple">
+<li>pull from upstream</li>
+<li>build docs locally</li>
+<li>publish html to helpdesk</li>
+<li>go contribute straight upstream</li>
+<li>receive patches</li>
+</ol>
+<p><strong>Publishing</strong></p>
 <ul class="simple">
 <li>tox -&gt; Sphinx -&gt; Zendesk REST API</li>
 <li><a class="reference external" href="https://github.com/dreamhost/zendesk-publish-script">https://github.com/dreamhost/zendesk-publish-script</a></li>
@@ -254,6 +256,92 @@ is about and to improve SEO.</p>
 </div>
 <div class="section" id="tuesday-april-26-2016">
 <h2>Tuesday April 26, 2016<a class="headerlink" href="#tuesday-april-26-2016" title="Permalink to this headline">#</a></h2>
+<div class="section" id="a-problem-single-sourcing-with-sphinx">
+<h3>A Problem: Single Sourcing with Sphinx<a class="headerlink" href="#a-problem-single-sourcing-with-sphinx" title="Permalink to this headline">#</a></h3>
+<p>Svetlana Karslioglu (Mirantis)</p>
+<ul class="simple">
+<li>DITA lends itself better to content reuse, but RST/Sphinx has extensibility
+that can be used to build single-source solutions</li>
+<li>Mirantis has 3 docs repositories for different products, and have a separate
+repository holding the glossary for all of them</li>
+</ul>
+<p><strong>Options</strong></p>
+<dl class="docutils">
+<dt>git sub-module</dt>
+<dd>these are difficult to set up and to get everyone using them correctly</dd>
+<dt>automated gerrit reviews</dt>
+<dd>ci-jobs to push glossary to repos, but manual merges still required</dd>
+<dt>Sphinx extension</dt>
+<dd>Submit changes to glossary. When a release is ready, package and submit to
+PyPi. Then include the package in each doc repo by specifying it as a
+requirement in requirements.txt and adding it to conf.py in the sphinx
+project. A Sphinx extension is required to build the glossary and use it
+as a directive so you can add it to the docs&#8217; index.rst.</dd>
+</dl>
+<p><a class="reference external" href="http://blog.getpelican.com/">Pelican Static Site Generator, Powered by Python</a></p>
+</div>
+<div class="section" id="openstack-talent-development-lessons-learned">
+<h3>OpenStack Talent Development - Lessons Learned<a class="headerlink" href="#openstack-talent-development-lessons-learned" title="Permalink to this headline">#</a></h3>
+<p>Tony Campbell (Rackspace) and Michael Apostol (OSIC)</p>
+<ul class="simple">
+<li>use NPS to determine how people found the course</li>
+<li>give exam at start and at finish of training to determine technical skills
+advancement</li>
+<li>new recruits were arranged into small teams and assigned coaches for
+mentoring outside the formal training</li>
+<li>training graduates were assigned to work on targeted OStack projects</li>
+</ul>
+<p><strong>Challenges</strong></p>
+<ul class="simple">
+<li>finding OStack talent and drawing them to San Antonio</li>
+<li>teaching new contributors how to be effective in the community (this is
+very project specific)</li>
+<li>identifying the best bugs for new contributors</li>
+</ul>
+<p><strong>Lessons learned</strong></p>
+<dl class="docutils">
+<dt>Cast a global net</dt>
+<dd>OStack is a global community, so find talent by looking world-wide.
+Bringing the teams together geographically in San Antonio was very useful
+for building teams.</dd>
+<dt>Farm universities for talent</dt>
+<dd>Partner with universities to develop talent. Collaborate on cloud curriculum
+with an emphasis on OStack. Offer paid internships and job opportunities.</dd>
+<dt>Solar System model</dt>
+<dd>Leverage OStack experts (PTLs, Cores) and surround them with new developers
+so they can learn the ecosystem and become influencers</dd>
+<dt>Develop a learning culture</dt>
+<dd>Learn to embrace rookies and training as a strategic leverage point.
+Schedule regular rhythm of training and development, offering a funnel
+to deeper training. Continually asesess training effectiveness.</dd>
+<dt>The Way of the Stacker</dt>
+<dd>OStack community has a culture of its own. To be a success you must embrace
+and work within that culture. Many new devs also need some introduction
+to open source development generally.</dd>
+</dl>
+<p><strong>What&#8217;s Next</strong></p>
+<ul class="simple">
+<li>talent replication, where former graduates help teach new cohorts</li>
+<li>new &#8220;learn/do&#8221; model</li>
+<li>project deep dives</li>
+<li>classes on supporting tech (Linux, Python, etc.)</li>
+</ul>
+</div>
+<div class="section" id="cross-project-workshops-brainstorm-format-for-design-summit-split-event">
+<h3>Cross Project workshops: Brainstorm format for design summit split event<a class="headerlink" href="#cross-project-workshops-brainstorm-format-for-design-summit-split-event" title="Permalink to this headline">#</a></h3>
+<p><a class="reference external" href="http://ttx.re/splitting-out-design-summit.html">http://ttx.re/splitting-out-design-summit.html</a>
+<a class="reference external" href="http://lists.openstack.org/pipermail/openstack-dev/2016-February/087161.html">http://lists.openstack.org/pipermail/openstack-dev/2016-February/087161.html</a></p>
+<p>Most people are agreed that a change would be beneficial, but there are many
+factors to consider:</p>
+<ul class="simple">
+<li>planning phases</li>
+<li>release candidates</li>
+<li>PTL elections</li>
+<li>cost</li>
+<li>location</li>
+<li>mid-cycles vs summits</li>
+</ul>
+</div>
 </div>
 <div class="section" id="wednesday-april-27-2016">
 <h2>Wednesday April 27, 2016<a class="headerlink" href="#wednesday-april-27-2016" title="Permalink to this headline">#</a></h2>
@@ -269,6 +357,7 @@ is about and to improve SEO.</p>
 <ul class="simple">
 <li>Improve titles by making them more specific to help people know what a topic
 is about and to improve SEO.</li>
+<li>check out <a class="reference external" href="http://blog.getpelican.com/">Pelican Static Site Generator, Powered by Python</a></li>
 </ul>
 </div>
 </div>
