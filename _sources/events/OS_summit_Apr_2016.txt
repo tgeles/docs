@@ -205,6 +205,22 @@ factors to consider:
 Wednesday April 27, 2016
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
+Docs Mitaka Retrospective
+-------------------------
+https://etherpad.openstack.org/p/austin-docs-mitakaretro
+
+Install Guide working session
+-----------------------------
+https://etherpad.openstack.org/p/austin-docs-workgroup-install
+
+Docs Toolchain/Infra working session
+------------------------------------
+https://etherpad.openstack.org/p/austin-docs-toolsinfra
+
+OpenStack Ansible documentation work session
+--------------------------------------------
+https://etherpad.openstack.org/p/openstack-ansible-newton-role-docs
+
 
 Thursday April 28, 2016
 ~~~~~~~~~~~~~~~~~~~~~~~
