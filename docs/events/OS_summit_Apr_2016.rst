@@ -225,6 +225,24 @@ https://etherpad.openstack.org/p/openstack-ansible-newton-role-docs
 Thursday April 28, 2016
 ~~~~~~~~~~~~~~~~~~~~~~~
 
+Contributor Guide work session
+------------------------------
+https://etherpad.openstack.org/p/austin-docs-contributorguide
+
+Work items:
+
+- improve doc-tools documentation and clean up. This should be in the doc-tools
+  repo. Links to this content from the Contributor Guide. Add personas to this
+  section in the Contributor Guide so people know what info is relevant to
+  them.
+- Add openstackdocstheme overview to Contributor Guide with links to detailed
+  content in the theme repo.
+- Add some reno documentation/guidelines. Olga to create a spec. See
+  http://docs.openstack.org/project-team-guide/release-management.html#how-to-add-new-release-notes
+- standards for diagrams. Image library?
+- Add content on how to publish/maintain the Install Guides
+- Add documentation review policies
+
 
 Friday April 29, 2016
 ~~~~~~~~~~~~~~~~~~~~~
