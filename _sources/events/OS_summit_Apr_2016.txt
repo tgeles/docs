@@ -265,6 +265,11 @@ https://etherpad.openstack.org/p/austin-docs-newtonplan
 Friday April 29, 2016
 ~~~~~~~~~~~~~~~~~~~~~
 
+Documentation Contributors Meetup
+---------------------------------
+
+Much work was discussed. Some was even accomplished.
+
 
 To-Do
 ~~~~~
