@@ -2,7 +2,10 @@
 Document repository
 ===================
 
-A collection of documents on various subjects written by @kallimachos.
+A collection of documents on various subjects written by
+`@kallimachos <https://github.com/kallimachos>`_.
+
+*Last updated:* |today|
 
 .. toctree::
    :maxdepth: 1
