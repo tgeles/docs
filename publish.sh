@@ -3,11 +3,14 @@
 # Helper script for publishing documentation to a gh-page branch.
 # Run from the master branch of the repository to publish.
 
+# set current directory
+STARTDIR=`pwd`
+
 # set repo root directory
 GITDIR=`git rev-parse --show-toplevel`
 
 # set source directories
-SOURCE='docs'
+SOURCE='doc'
 
 # ensure master is up-to-date
 cd $GITDIR
@@ -39,6 +42,12 @@ git push origin gh-pages
 
 # checkout master and signal completion
 git checkout master
+cd $STARTDIR
 echo
-tput setaf 2; echo "Docs published to http://kallimachos.github.io/docs."
-tput sgr0
+if test `tput -T $TERM colors` -lt 256; then
+    echo "Docs published to http://kallimachos.github.io/docs."
+else
+    tput -T $TERM setaf 2
+    echo "Docs published to http://kallimachos.github.io/docs."
+    tput -T $TERM sgr0
+fi

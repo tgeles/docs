@@ -85,8 +85,8 @@ Docs Team Structure Fishbowl Session
 
 - Edit How To and How To for First Timers -> add in an example commit message,
   tell them to join the `OpenStack Docs team
-  <http://docs.openstack.org/contributor-guide/first-timers-quickstart.html>`_
-  , put a link to the review guidelines at the top of the page, next to the How
+  <http://docs.openstack.org/contributor-guide/quickstart.html>`_,
+  put a link to the review guidelines at the top of the page, next to the How
   To links
 
   - Rewrite the documentation Howto, resulting in a good, easy-to-read and
