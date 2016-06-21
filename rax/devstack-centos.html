@@ -28,6 +28,8 @@
   
 
   
+    <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+  
 
   
     <link rel="top" title="Document Repository  documentation" href="../index.html"/>
@@ -81,7 +83,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../events/index.html">Event Logs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../git-guide/index.html">Git Guide</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Rackspace Public Cloud</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="">Running DevStack on the Rackspace public cloud</a><ul>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Running DevStack on the Rackspace public cloud</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#centos-devstack-on-rax">CentOS DevStack on RAX</a></li>
 </ul>
 </li>
@@ -151,37 +153,37 @@ with an appropriate ssh key, and the standard public and service
 networks.</p>
 </li>
 <li><p class="first">Access the machine using <strong>ssh</strong> as root:</p>
-<div class="code highlight-python"><div class="highlight"><pre><span></span>$ ssh root@123.456.789
+<div class="code highlight-default"><div class="highlight"><pre><span></span>$ ssh root@123.456.789
 </pre></div>
 </div>
 </li>
 <li><p class="first">Update the machine, then clone the devstack repository:</p>
-<div class="code highlight-python"><div class="highlight"><pre><span></span><span class="c1"># yum update -y</span>
+<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="c1"># yum update -y</span>
 <span class="c1"># git clone https://git.openstack.org/openstack-dev/devstack</span>
 </pre></div>
 </div>
 </li>
 <li><p class="first">Create the stack user by running the <strong>create-stack-user.sh</strong>
 script:</p>
-<div class="code highlight-python"><div class="highlight"><pre><span></span><span class="c1"># ./devstack/tools/create-stack-user.sh</span>
+<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="c1"># ./devstack/tools/create-stack-user.sh</span>
 </pre></div>
 </div>
 </li>
 <li><p class="first">Switch to the stack user and clone the devstack repository again:</p>
-<div class="code highlight-python"><div class="highlight"><pre><span></span># su - stack
+<div class="code highlight-default"><div class="highlight"><pre><span></span># su - stack
 $ git clone https://git.openstack.org/openstack-dev/devstack
 </pre></div>
 </div>
 </li>
 <li><p class="first">Install DevStack by running the <strong>stack.sh</strong> script:</p>
-<div class="code highlight-python"><div class="highlight"><pre><span></span>$ ./devstack/stack.sh
+<div class="code highlight-default"><div class="highlight"><pre><span></span>$ ./devstack/stack.sh
 </pre></div>
 </div>
 </li>
 <li><p class="first">Specify passwords when required by the installation script.</p>
 </li>
 <li><p class="first">After the installation finishes, logout as the <strong>stack</strong> user:</p>
-<div class="code highlight-python"><div class="highlight"><pre><span></span>$ exit
+<div class="code highlight-default"><div class="highlight"><pre><span></span>$ exit
 </pre></div>
 </div>
 </li>
@@ -189,7 +191,7 @@ $ git clone https://git.openstack.org/openstack-dev/devstack
 following contents. Sourcing this file sets certain environment
 variables to save typing when running openstack commands. Substitute
 the password and IP address of your devstack:</p>
-<div class="code highlight-python"><div class="highlight"><pre><span></span>export OS_PROJECT_DOMAIN_ID=default
+<div class="code highlight-default"><div class="highlight"><pre><span></span>export OS_PROJECT_DOMAIN_ID=default
 export OS_USER_DOMAIN_ID=default
 export OS_PROJECT_NAME=admin
 export OS_TENANT_NAME=admin
@@ -201,128 +203,128 @@ export OS_IDENTITY_API_VERSION=3``
 </div>
 </li>
 <li><p class="first">Source the <strong>admin-openrc.sh</strong> file:</p>
-<div class="code highlight-python"><div class="highlight"><pre><span></span><span class="c1"># source admin-openrc.sh</span>
+<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="c1"># source admin-openrc.sh</span>
 </pre></div>
 </div>
 </li>
 <li><p class="first">Generate and add a key pair:</p>
-<div class="code highlight-python"><div class="highlight"><pre><span></span><span class="c1"># ssh-keygen -q -N &quot;&quot;</span>
+<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="c1"># ssh-keygen -q -N &quot;&quot;</span>
 <span class="c1"># nova keypair-add --pub-key .ssh/id_rsa.pub mykey</span>
 </pre></div>
 </div>
 </li>
 <li><p class="first">Verify addition of the key pair:</p>
-<div class="code highlight-python"><div class="highlight"><pre><span></span># nova keypair-list
-+-------+-------------------------------------------------+
-| Name  | Fingerprint                                     |
-+-------+-------------------------------------------------+
-| mykey | 6c:74:ec:3a:08:05:4e:9e:21:22:a6:dd:b2:62:b8:28 |
-+-------+-------------------------------------------------+
+<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="c1"># nova keypair-list</span>
+<span class="o">+-------+-------------------------------------------------+</span>
+<span class="o">|</span> <span class="n">Name</span>  <span class="o">|</span> <span class="n">Fingerprint</span>                                     <span class="o">|</span>
+<span class="o">+-------+-------------------------------------------------+</span>
+<span class="o">|</span> <span class="n">mykey</span> <span class="o">|</span> <span class="mi">6</span><span class="n">c</span><span class="p">:</span><span class="mi">74</span><span class="p">:</span><span class="n">ec</span><span class="p">:</span><span class="mi">3</span><span class="n">a</span><span class="p">:</span><span class="mi">08</span><span class="p">:</span><span class="mi">05</span><span class="p">:</span><span class="mi">4</span><span class="n">e</span><span class="p">:</span><span class="mi">9</span><span class="n">e</span><span class="p">:</span><span class="mi">21</span><span class="p">:</span><span class="mi">22</span><span class="p">:</span><span class="n">a6</span><span class="p">:</span><span class="n">dd</span><span class="p">:</span><span class="n">b2</span><span class="p">:</span><span class="mi">62</span><span class="p">:</span><span class="n">b8</span><span class="p">:</span><span class="mi">28</span> <span class="o">|</span>
+<span class="o">+-------+-------------------------------------------------+</span>
 </pre></div>
 </div>
 </li>
 <li><p class="first">Add ping and SSH security rules:</p>
-<div class="code highlight-python"><div class="highlight"><pre><span></span># nova secgroup-add-rule default icmp -1 -1 0.0.0.0/0
-+-------------+-----------+---------+-----------+--------------+
-| IP Protocol | From Port | To Port | IP Range | Source Group  |
-+-------------+-----------+---------+-----------+--------------+
-| icmp        | -1        | -1      | 0.0.0.0/0 |              |
-+-------------+-----------+---------+-----------+--------------+
+<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="c1"># nova secgroup-add-rule default icmp -1 -1 0.0.0.0/0</span>
+<span class="o">+-------------+-----------+---------+-----------+--------------+</span>
+<span class="o">|</span> <span class="n">IP</span> <span class="n">Protocol</span> <span class="o">|</span> <span class="n">From</span> <span class="n">Port</span> <span class="o">|</span> <span class="n">To</span> <span class="n">Port</span> <span class="o">|</span> <span class="n">IP</span> <span class="n">Range</span> <span class="o">|</span> <span class="n">Source</span> <span class="n">Group</span>  <span class="o">|</span>
+<span class="o">+-------------+-----------+---------+-----------+--------------+</span>
+<span class="o">|</span> <span class="n">icmp</span>        <span class="o">|</span> <span class="o">-</span><span class="mi">1</span>        <span class="o">|</span> <span class="o">-</span><span class="mi">1</span>      <span class="o">|</span> <span class="mf">0.0</span><span class="o">.</span><span class="mf">0.0</span><span class="o">/</span><span class="mi">0</span> <span class="o">|</span>              <span class="o">|</span>
+<span class="o">+-------------+-----------+---------+-----------+--------------+</span>
 
-# nova secgroup-add-rule default tcp 22 22 0.0.0.0/0
-+-------------+-----------+---------+-----------+--------------+
-| IP Protocol | From Port | To Port | IP Range  | Source Group |
-+-------------+-----------+---------+-----------+--------------+
-| tcp         | 22        | 22      | 0.0.0.0/0 |              |
-+-------------+-----------+---------+-----------+--------------+
+<span class="c1"># nova secgroup-add-rule default tcp 22 22 0.0.0.0/0</span>
+<span class="o">+-------------+-----------+---------+-----------+--------------+</span>
+<span class="o">|</span> <span class="n">IP</span> <span class="n">Protocol</span> <span class="o">|</span> <span class="n">From</span> <span class="n">Port</span> <span class="o">|</span> <span class="n">To</span> <span class="n">Port</span> <span class="o">|</span> <span class="n">IP</span> <span class="n">Range</span>  <span class="o">|</span> <span class="n">Source</span> <span class="n">Group</span> <span class="o">|</span>
+<span class="o">+-------------+-----------+---------+-----------+--------------+</span>
+<span class="o">|</span> <span class="n">tcp</span>         <span class="o">|</span> <span class="mi">22</span>        <span class="o">|</span> <span class="mi">22</span>      <span class="o">|</span> <span class="mf">0.0</span><span class="o">.</span><span class="mf">0.0</span><span class="o">/</span><span class="mi">0</span> <span class="o">|</span>              <span class="o">|</span>
+<span class="o">+-------------+-----------+---------+-----------+--------------+</span>
 </pre></div>
 </div>
 </li>
 <li><p class="first">Add a cirros image to the Glance repository:</p>
-<div class="code highlight-python"><div class="highlight"><pre><span></span># wget http://download.cirros-cloud.net/0.3.4/cirros-0.3.4-x86_64-disk.img
-# glance image-create --name &quot;cirros&quot; \
-  --file cirros-0.3.4-x86_64-disk.img --disk-format qcow2 \
-  --container-format bare --visibility public --progress
+<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="c1"># wget http://download.cirros-cloud.net/0.3.4/cirros-0.3.4-x86_64-disk.img</span>
+<span class="c1"># glance image-create --name &quot;cirros&quot; \</span>
+  <span class="o">--</span><span class="n">file</span> <span class="n">cirros</span><span class="o">-</span><span class="mf">0.3</span><span class="o">.</span><span class="mi">4</span><span class="o">-</span><span class="n">x86_64</span><span class="o">-</span><span class="n">disk</span><span class="o">.</span><span class="n">img</span> <span class="o">--</span><span class="n">disk</span><span class="o">-</span><span class="nb">format</span> <span class="n">qcow2</span> \
+  <span class="o">--</span><span class="n">container</span><span class="o">-</span><span class="nb">format</span> <span class="n">bare</span> <span class="o">--</span><span class="n">visibility</span> <span class="n">public</span> <span class="o">--</span><span class="n">progress</span>
 </pre></div>
 </div>
 </li>
 <li><p class="first">List available images:</p>
-<div class="code highlight-python"><div class="highlight"><pre><span></span># nova image-list
-+--------------------------------------+--------+--------+--------+
-| ID                                   | Name   | Status | Server |
-+--------------------------------------+--------+--------+--------+
-| 38047887-61a7-41ea-9b49-27987d5e8bb9 | cirros | ACTIVE |        |
-+--------------------------------------+--------+--------+--------+
+<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="c1"># nova image-list</span>
+<span class="o">+--------------------------------------+--------+--------+--------+</span>
+<span class="o">|</span> <span class="n">ID</span>                                   <span class="o">|</span> <span class="n">Name</span>   <span class="o">|</span> <span class="n">Status</span> <span class="o">|</span> <span class="n">Server</span> <span class="o">|</span>
+<span class="o">+--------------------------------------+--------+--------+--------+</span>
+<span class="o">|</span> <span class="mi">38047887</span><span class="o">-</span><span class="mi">61</span><span class="n">a7</span><span class="o">-</span><span class="mi">41</span><span class="n">ea</span><span class="o">-</span><span class="mi">9</span><span class="n">b49</span><span class="o">-</span><span class="mi">27987</span><span class="n">d5e8bb9</span> <span class="o">|</span> <span class="n">cirros</span> <span class="o">|</span> <span class="n">ACTIVE</span> <span class="o">|</span>        <span class="o">|</span>
+<span class="o">+--------------------------------------+--------+--------+--------+</span>
 </pre></div>
 </div>
 </li>
 <li><p class="first">List available flavors:</p>
-<div class="code highlight-python"><div class="highlight"><pre><span></span># nova flavor-list
-+-----+-----------+-----------+------+-----------+------+-------+-------------+-----------+
-| ID  | Name      | Memory_MB | Disk | Ephemeral | Swap | VCPUs | RXTX_Factor | Is_Public |
-+-----+-----------+-----------+------+-----------+------+-------+-------------+-----------+
-| 1   | m1.tiny   | 512       | 1    | 0         |      | 1     | 1.0         | True      |
-| 2   | m1.small  | 2048      | 20   | 0         |      | 1     | 1.0         | True      |
-| 3   | m1.medium | 4096      | 40   | 0         |      | 2     | 1.0         | True      |
-| 4   | m1.large  | 8192      | 80   | 0         |      | 4     | 1.0         | True      |
-| 5   | m1.xlarge | 16384     | 160  | 0         |      | 8     | 1.0         | True      |
-+-----+-----------+-----------+------+-----------+------+-------+-------------+-----------+
+<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="c1"># nova flavor-list</span>
+<span class="o">+-----+-----------+-----------+------+-----------+------+-------+-------------+-----------+</span>
+<span class="o">|</span> <span class="n">ID</span>  <span class="o">|</span> <span class="n">Name</span>      <span class="o">|</span> <span class="n">Memory_MB</span> <span class="o">|</span> <span class="n">Disk</span> <span class="o">|</span> <span class="n">Ephemeral</span> <span class="o">|</span> <span class="n">Swap</span> <span class="o">|</span> <span class="n">VCPUs</span> <span class="o">|</span> <span class="n">RXTX_Factor</span> <span class="o">|</span> <span class="n">Is_Public</span> <span class="o">|</span>
+<span class="o">+-----+-----------+-----------+------+-----------+------+-------+-------------+-----------+</span>
+<span class="o">|</span> <span class="mi">1</span>   <span class="o">|</span> <span class="n">m1</span><span class="o">.</span><span class="n">tiny</span>   <span class="o">|</span> <span class="mi">512</span>       <span class="o">|</span> <span class="mi">1</span>    <span class="o">|</span> <span class="mi">0</span>         <span class="o">|</span>      <span class="o">|</span> <span class="mi">1</span>     <span class="o">|</span> <span class="mf">1.0</span>         <span class="o">|</span> <span class="kc">True</span>      <span class="o">|</span>
+<span class="o">|</span> <span class="mi">2</span>   <span class="o">|</span> <span class="n">m1</span><span class="o">.</span><span class="n">small</span>  <span class="o">|</span> <span class="mi">2048</span>      <span class="o">|</span> <span class="mi">20</span>   <span class="o">|</span> <span class="mi">0</span>         <span class="o">|</span>      <span class="o">|</span> <span class="mi">1</span>     <span class="o">|</span> <span class="mf">1.0</span>         <span class="o">|</span> <span class="kc">True</span>      <span class="o">|</span>
+<span class="o">|</span> <span class="mi">3</span>   <span class="o">|</span> <span class="n">m1</span><span class="o">.</span><span class="n">medium</span> <span class="o">|</span> <span class="mi">4096</span>      <span class="o">|</span> <span class="mi">40</span>   <span class="o">|</span> <span class="mi">0</span>         <span class="o">|</span>      <span class="o">|</span> <span class="mi">2</span>     <span class="o">|</span> <span class="mf">1.0</span>         <span class="o">|</span> <span class="kc">True</span>      <span class="o">|</span>
+<span class="o">|</span> <span class="mi">4</span>   <span class="o">|</span> <span class="n">m1</span><span class="o">.</span><span class="n">large</span>  <span class="o">|</span> <span class="mi">8192</span>      <span class="o">|</span> <span class="mi">80</span>   <span class="o">|</span> <span class="mi">0</span>         <span class="o">|</span>      <span class="o">|</span> <span class="mi">4</span>     <span class="o">|</span> <span class="mf">1.0</span>         <span class="o">|</span> <span class="kc">True</span>      <span class="o">|</span>
+<span class="o">|</span> <span class="mi">5</span>   <span class="o">|</span> <span class="n">m1</span><span class="o">.</span><span class="n">xlarge</span> <span class="o">|</span> <span class="mi">16384</span>     <span class="o">|</span> <span class="mi">160</span>  <span class="o">|</span> <span class="mi">0</span>         <span class="o">|</span>      <span class="o">|</span> <span class="mi">8</span>     <span class="o">|</span> <span class="mf">1.0</span>         <span class="o">|</span> <span class="kc">True</span>      <span class="o">|</span>
+<span class="o">+-----+-----------+-----------+------+-----------+------+-------+-------------+-----------+</span>
 </pre></div>
 </div>
 </li>
 <li><p class="first">List available security groups:</p>
-<div class="code highlight-python"><div class="highlight"><pre><span></span># nova secgroup-list
-+--------------------------------------+---------+-------------+
-| Id                                   | Name    | Description |
-+--------------------------------------+---------+-------------+
-| ad8d4ea5-3cad-4f7d-b164-ada67ec59473 | default | default     |
-+--------------------------------------+---------+-------------+
+<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="c1"># nova secgroup-list</span>
+<span class="o">+--------------------------------------+---------+-------------+</span>
+<span class="o">|</span> <span class="n">Id</span>                                   <span class="o">|</span> <span class="n">Name</span>    <span class="o">|</span> <span class="n">Description</span> <span class="o">|</span>
+<span class="o">+--------------------------------------+---------+-------------+</span>
+<span class="o">|</span> <span class="n">ad8d4ea5</span><span class="o">-</span><span class="mi">3</span><span class="n">cad</span><span class="o">-</span><span class="mi">4</span><span class="n">f7d</span><span class="o">-</span><span class="n">b164</span><span class="o">-</span><span class="n">ada67ec59473</span> <span class="o">|</span> <span class="n">default</span> <span class="o">|</span> <span class="n">default</span>     <span class="o">|</span>
+<span class="o">+--------------------------------------+---------+-------------+</span>
 </pre></div>
 </div>
 </li>
 <li><p class="first">Launch an instance:</p>
-<div class="code highlight-python"><div class="highlight"><pre><span></span># nova boot --flavor m1.tiny --image cirros --security-group default \
-  --key-name mykey myinstance
-+--------------------------------------+-----------------------------------------------+
-| Property                             | Value                                         |
-+--------------------------------------+-----------------------------------------------+
-| OS-DCF:diskConfig                    | MANUAL                                        |
-| OS-EXT-AZ:availability_zone          |                                               |
-| OS-EXT-SRV-ATTR:host                 | -                                             |
-| OS-EXT-SRV-ATTR:hostname             | myinstance                                    |
-| OS-EXT-SRV-ATTR:hypervisor_hostname  | -                                             |
-| OS-EXT-SRV-ATTR:instance_name        | instance-00000002                             |
-| OS-EXT-SRV-ATTR:kernel_id            |                                               |
-| OS-EXT-SRV-ATTR:launch_index         | 0                                             |
-| OS-EXT-SRV-ATTR:ramdisk_id           |                                               |
-| OS-EXT-SRV-ATTR:reservation_id       | r-su40i1k4                                    |
-| OS-EXT-SRV-ATTR:root_device_name     | -                                             |
-| OS-EXT-SRV-ATTR:user_data            | -                                             |
-| OS-EXT-STS:power_state               | 0                                             |
-| OS-EXT-STS:task_state                | scheduling                                    |
-| OS-EXT-STS:vm_state                  | building                                      |
-| OS-SRV-USG:launched_at               | -                                             |
-| OS-SRV-USG:terminated_at             | -                                             |
-| accessIPv4                           |                                               |
-| accessIPv6                           |                                               |
-| adminPass                            | u8uZM35FJoTE                                  |
-| config_drive                         |                                               |
-| created                              | 2015-10-26T05:50:14Z                          |
-| flavor                               | m1.tiny (1)                                   |
-| hostId                               |                                               |
-| id                                   | 279efcf9-f168-4b1d-a1d2-4424de7c9b25          |
-| image                                | cirros (bed0c617-77f8-4e90-8310-f65436c51a84) |
-| key_name                             | mykey                                         |
-| metadata                             | {}                                            |
-| name                                 | myinstance                                    |
-| os-extended-volumes:volumes_attached | []                                            |
-| progress                             | 0                                             |
-| security_groups                      | default                                       |
-| status                               | BUILD                                         |
-| tenant_id                            | d8859cbbd5924a159b569f7f57c3ab8c              |
-| updated                              | 2015-10-26T05:50:15Z                          |
-| user_id                              | 214c9d984a084cd6b92e89bafc755c9c              |
-+--------------------------------------+-----------------------------------------------+
+<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="c1"># nova boot --flavor m1.tiny --image cirros --security-group default \</span>
+  <span class="o">--</span><span class="n">key</span><span class="o">-</span><span class="n">name</span> <span class="n">mykey</span> <span class="n">myinstance</span>
+<span class="o">+--------------------------------------+-----------------------------------------------+</span>
+<span class="o">|</span> <span class="n">Property</span>                             <span class="o">|</span> <span class="n">Value</span>                                         <span class="o">|</span>
+<span class="o">+--------------------------------------+-----------------------------------------------+</span>
+<span class="o">|</span> <span class="n">OS</span><span class="o">-</span><span class="n">DCF</span><span class="p">:</span><span class="n">diskConfig</span>                    <span class="o">|</span> <span class="n">MANUAL</span>                                        <span class="o">|</span>
+<span class="o">|</span> <span class="n">OS</span><span class="o">-</span><span class="n">EXT</span><span class="o">-</span><span class="n">AZ</span><span class="p">:</span><span class="n">availability_zone</span>          <span class="o">|</span>                                               <span class="o">|</span>
+<span class="o">|</span> <span class="n">OS</span><span class="o">-</span><span class="n">EXT</span><span class="o">-</span><span class="n">SRV</span><span class="o">-</span><span class="n">ATTR</span><span class="p">:</span><span class="n">host</span>                 <span class="o">|</span> <span class="o">-</span>                                             <span class="o">|</span>
+<span class="o">|</span> <span class="n">OS</span><span class="o">-</span><span class="n">EXT</span><span class="o">-</span><span class="n">SRV</span><span class="o">-</span><span class="n">ATTR</span><span class="p">:</span><span class="n">hostname</span>             <span class="o">|</span> <span class="n">myinstance</span>                                    <span class="o">|</span>
+<span class="o">|</span> <span class="n">OS</span><span class="o">-</span><span class="n">EXT</span><span class="o">-</span><span class="n">SRV</span><span class="o">-</span><span class="n">ATTR</span><span class="p">:</span><span class="n">hypervisor_hostname</span>  <span class="o">|</span> <span class="o">-</span>                                             <span class="o">|</span>
+<span class="o">|</span> <span class="n">OS</span><span class="o">-</span><span class="n">EXT</span><span class="o">-</span><span class="n">SRV</span><span class="o">-</span><span class="n">ATTR</span><span class="p">:</span><span class="n">instance_name</span>        <span class="o">|</span> <span class="n">instance</span><span class="o">-</span><span class="mi">00000002</span>                             <span class="o">|</span>
+<span class="o">|</span> <span class="n">OS</span><span class="o">-</span><span class="n">EXT</span><span class="o">-</span><span class="n">SRV</span><span class="o">-</span><span class="n">ATTR</span><span class="p">:</span><span class="n">kernel_id</span>            <span class="o">|</span>                                               <span class="o">|</span>
+<span class="o">|</span> <span class="n">OS</span><span class="o">-</span><span class="n">EXT</span><span class="o">-</span><span class="n">SRV</span><span class="o">-</span><span class="n">ATTR</span><span class="p">:</span><span class="n">launch_index</span>         <span class="o">|</span> <span class="mi">0</span>                                             <span class="o">|</span>
+<span class="o">|</span> <span class="n">OS</span><span class="o">-</span><span class="n">EXT</span><span class="o">-</span><span class="n">SRV</span><span class="o">-</span><span class="n">ATTR</span><span class="p">:</span><span class="n">ramdisk_id</span>           <span class="o">|</span>                                               <span class="o">|</span>
+<span class="o">|</span> <span class="n">OS</span><span class="o">-</span><span class="n">EXT</span><span class="o">-</span><span class="n">SRV</span><span class="o">-</span><span class="n">ATTR</span><span class="p">:</span><span class="n">reservation_id</span>       <span class="o">|</span> <span class="n">r</span><span class="o">-</span><span class="n">su40i1k4</span>                                    <span class="o">|</span>
+<span class="o">|</span> <span class="n">OS</span><span class="o">-</span><span class="n">EXT</span><span class="o">-</span><span class="n">SRV</span><span class="o">-</span><span class="n">ATTR</span><span class="p">:</span><span class="n">root_device_name</span>     <span class="o">|</span> <span class="o">-</span>                                             <span class="o">|</span>
+<span class="o">|</span> <span class="n">OS</span><span class="o">-</span><span class="n">EXT</span><span class="o">-</span><span class="n">SRV</span><span class="o">-</span><span class="n">ATTR</span><span class="p">:</span><span class="n">user_data</span>            <span class="o">|</span> <span class="o">-</span>                                             <span class="o">|</span>
+<span class="o">|</span> <span class="n">OS</span><span class="o">-</span><span class="n">EXT</span><span class="o">-</span><span class="n">STS</span><span class="p">:</span><span class="n">power_state</span>               <span class="o">|</span> <span class="mi">0</span>                                             <span class="o">|</span>
+<span class="o">|</span> <span class="n">OS</span><span class="o">-</span><span class="n">EXT</span><span class="o">-</span><span class="n">STS</span><span class="p">:</span><span class="n">task_state</span>                <span class="o">|</span> <span class="n">scheduling</span>                                    <span class="o">|</span>
+<span class="o">|</span> <span class="n">OS</span><span class="o">-</span><span class="n">EXT</span><span class="o">-</span><span class="n">STS</span><span class="p">:</span><span class="n">vm_state</span>                  <span class="o">|</span> <span class="n">building</span>                                      <span class="o">|</span>
+<span class="o">|</span> <span class="n">OS</span><span class="o">-</span><span class="n">SRV</span><span class="o">-</span><span class="n">USG</span><span class="p">:</span><span class="n">launched_at</span>               <span class="o">|</span> <span class="o">-</span>                                             <span class="o">|</span>
+<span class="o">|</span> <span class="n">OS</span><span class="o">-</span><span class="n">SRV</span><span class="o">-</span><span class="n">USG</span><span class="p">:</span><span class="n">terminated_at</span>             <span class="o">|</span> <span class="o">-</span>                                             <span class="o">|</span>
+<span class="o">|</span> <span class="n">accessIPv4</span>                           <span class="o">|</span>                                               <span class="o">|</span>
+<span class="o">|</span> <span class="n">accessIPv6</span>                           <span class="o">|</span>                                               <span class="o">|</span>
+<span class="o">|</span> <span class="n">adminPass</span>                            <span class="o">|</span> <span class="n">u8uZM35FJoTE</span>                                  <span class="o">|</span>
+<span class="o">|</span> <span class="n">config_drive</span>                         <span class="o">|</span>                                               <span class="o">|</span>
+<span class="o">|</span> <span class="n">created</span>                              <span class="o">|</span> <span class="mi">2015</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="mi">26</span><span class="n">T05</span><span class="p">:</span><span class="mi">50</span><span class="p">:</span><span class="mi">14</span><span class="n">Z</span>                          <span class="o">|</span>
+<span class="o">|</span> <span class="n">flavor</span>                               <span class="o">|</span> <span class="n">m1</span><span class="o">.</span><span class="n">tiny</span> <span class="p">(</span><span class="mi">1</span><span class="p">)</span>                                   <span class="o">|</span>
+<span class="o">|</span> <span class="n">hostId</span>                               <span class="o">|</span>                                               <span class="o">|</span>
+<span class="o">|</span> <span class="nb">id</span>                                   <span class="o">|</span> <span class="mi">279</span><span class="n">efcf9</span><span class="o">-</span><span class="n">f168</span><span class="o">-</span><span class="mi">4</span><span class="n">b1d</span><span class="o">-</span><span class="n">a1d2</span><span class="o">-</span><span class="mi">4424</span><span class="n">de7c9b25</span>          <span class="o">|</span>
+<span class="o">|</span> <span class="n">image</span>                                <span class="o">|</span> <span class="n">cirros</span> <span class="p">(</span><span class="n">bed0c617</span><span class="o">-</span><span class="mi">77</span><span class="n">f8</span><span class="o">-</span><span class="mi">4</span><span class="n">e90</span><span class="o">-</span><span class="mi">8310</span><span class="o">-</span><span class="n">f65436c51a84</span><span class="p">)</span> <span class="o">|</span>
+<span class="o">|</span> <span class="n">key_name</span>                             <span class="o">|</span> <span class="n">mykey</span>                                         <span class="o">|</span>
+<span class="o">|</span> <span class="n">metadata</span>                             <span class="o">|</span> <span class="p">{}</span>                                            <span class="o">|</span>
+<span class="o">|</span> <span class="n">name</span>                                 <span class="o">|</span> <span class="n">myinstance</span>                                    <span class="o">|</span>
+<span class="o">|</span> <span class="n">os</span><span class="o">-</span><span class="n">extended</span><span class="o">-</span><span class="n">volumes</span><span class="p">:</span><span class="n">volumes_attached</span> <span class="o">|</span> <span class="p">[]</span>                                            <span class="o">|</span>
+<span class="o">|</span> <span class="n">progress</span>                             <span class="o">|</span> <span class="mi">0</span>                                             <span class="o">|</span>
+<span class="o">|</span> <span class="n">security_groups</span>                      <span class="o">|</span> <span class="n">default</span>                                       <span class="o">|</span>
+<span class="o">|</span> <span class="n">status</span>                               <span class="o">|</span> <span class="n">BUILD</span>                                         <span class="o">|</span>
+<span class="o">|</span> <span class="n">tenant_id</span>                            <span class="o">|</span> <span class="n">d8859cbbd5924a159b569f7f57c3ab8c</span>              <span class="o">|</span>
+<span class="o">|</span> <span class="n">updated</span>                              <span class="o">|</span> <span class="mi">2015</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="mi">26</span><span class="n">T05</span><span class="p">:</span><span class="mi">50</span><span class="p">:</span><span class="mi">15</span><span class="n">Z</span>                          <span class="o">|</span>
+<span class="o">|</span> <span class="n">user_id</span>                              <span class="o">|</span> <span class="mi">214</span><span class="n">c9d984a084cd6b92e89bafc755c9c</span>              <span class="o">|</span>
+<span class="o">+--------------------------------------+-----------------------------------------------+</span>
 </pre></div>
 </div>
 </li>
