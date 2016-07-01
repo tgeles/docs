@@ -30,3 +30,18 @@ Working with Remote Branches
    * - git reset --hard origin/*branch*
      - resets the checked-out local branch to the status of the specified
        remote branch; running ``git fetch origin`` first is recommended
+
+
+Troubleshooting
+~~~~~~~~~~~~~~~
+
+To reset origin remote to upstream remote, run the following commands:
+
+.. code::
+
+   git remote update
+   git reset --hard upstream/master --
+   git push origin +master
+
+The double hyphen ensures that ``upstream/master`` is considered as a revision
+and not confused as a path.
