@@ -22,11 +22,11 @@ Johnathan Bryce (Executive Director, OpenStack Foundation)
 
   - 64.99 billion page views per month
   - 31.9 billion are from mobile devices
-  - 270 million apps downlowded
+  - 270 million apps downloaded
   - 100+ services
   - running 50000+ instances on OS
   - 20 PB data storage
-  - 6 times traffic denisty compared to physical env
+  - 6 times traffic density compared to physical environment
   - 20+ clusters
   - they've doubled OS use in the last year
   - experience massive spikes when certain events (e.g. natural disaster) take
@@ -103,8 +103,8 @@ Florian Haas (Principal Consultant, hastexo)
 
 - the room was full, but this would be worth watching online later
 
-Upgading OpenStack Without Breaking Everything (Including Neutron!)
--------------------------------------------------------------------
+Upgrading OpenStack Without Breaking Everything (Including Neutron!)
+--------------------------------------------------------------------
 Sean Lynn (Principal Engineer, OpenStack DevOps, TWC) and Clayton O'Neill
 (Principal Engineer, Time Warner Cable)
 

@@ -284,7 +284,7 @@ Moriel Schottlender - Wikimedia Foundation
 - RTL user base is growing
 - RTL readers also see other things RTL, for example where a logo or nav
   controls on top right rather than top left
-- initial solution for internet RTL was simply to write things backwords using
+- initial solution for internet RTL was simply to write things backwards using
   conversion scripts
 - next solution was logical and visual rendering: you write RTL and the text
   is displayed RTL
@@ -433,7 +433,7 @@ Neil Brown
 - everything is pluggable
 - multiple document backends
 - multiple language bindings
-- multiple multi-stage rendereres
+- multiple multi-stage renderers
 - multiple display managers
 - configurable key/event bindings
 - loadable libraries for everything else
@@ -508,7 +508,7 @@ Python's dark corners
 ---------------------
 Peter Lovett
 
-- whitespace can cause unexpected behaviour:
+- whitespace can cause unexpected behavior:
 
   - run python -t to give warnings if you mix tabs and spaces
   - python interprets a tab as 8 spaces
@@ -527,7 +527,7 @@ Peter Lovett
   use it to access the builtin: ``a = __builtin__.str('hi')``
 - Python does not prevent accidental name creation, but there are testing
   tools and IDEs that can help
-- scope is localised when you do any assignment within a function; trying to
+- scope is localized when you do any assignment within a function; trying to
   use a global within a function then assigning in that function will cause
   an ``unboundlocalvariable`` error
 - no void return type, so you don't get an error if you assign to something
@@ -555,7 +555,7 @@ Ruth Suehle
 - TP1 and TP2 are the pins for checking your power
 - use a powered hub for peripherals
 - https://www.raspberrypi.org/blog/raspberry-leaf/
-- use a case to protect your Pi - lego works great
+- use a case to protect your Pi - Lego works great
 - RaspBMC/XBMC is now Kodi
 - Running classic games works well on the Pi
 - *Raspberry Pi Hacks* written by Ruth Suehle and Tom Calloway

@@ -22,7 +22,7 @@ Mitaka: Beyond the Release Notes
 --------------------------------
 https://etherpad.openstack.org/p/AUS-ops-Beyond-the-Release-Notes
 
-Meet the OpenStack Personas (So Far)
+Meet the OpenStack Personae (So Far)
 ------------------------------------
 bit.ly/OpenStackPersonasAustin
 
@@ -34,11 +34,11 @@ bit.ly/OpenStackPersonasAustin
 - Workshop @IBM Design Austin
 
   - cloud adoption stages
-  - OStack ecosystem
+  - OpenStack ecosystem
   - cloud roles
 
-- integrate personas into your discussions
-- participate in activities to document, validate, and update personas
+- integrate personae into your discussions
+- participate in activities to document, validate, and update personae
 - these different roles tend to emerge as a company gets bigger. Scale of an
   organization impacts the diversity of roles.
 
@@ -63,7 +63,7 @@ Monty Taylor and Thierry Carrez
 
 - single-vendor. TC no longer requires projects to involve multiple vendors
 - confusion. The plethora of projects can be confusing for people new to the
-  OStack ecosystem.
+  OpenStack ecosystem.
 - made joining OpenStack harder for established projects because they have
   established processes that do not match the Big Tent requirements
 - where do you set the limits of the tent?
@@ -86,7 +86,7 @@ Stefano Maffulli and Caleb Boylan (DreamHost)
 
 #. pull from upstream
 #. build docs locally
-#. publish html to helpdesk
+#. publish HTML to help desk
 #. go contribute straight upstream
 #. receive patches
 
@@ -96,8 +96,8 @@ Stefano Maffulli and Caleb Boylan (DreamHost)
 - https://github.com/dreamhost/zendesk-publish-script
 - YAML file that nests files-to-publish inside the route for where they should
   be published
-- automated using a Jenkins job that polls github repo and runs script when
-  changes detected
+- automated using a Jenkins job that polls GitHub repository and runs script
+  when changes detected
 - section titles that work well in context (e.g. Launch Instances), do not
   work well as isolated tasks and must be changed (e.g. How to Launch
   Instances)
@@ -124,11 +124,11 @@ git sub-module
    these are difficult to set up and to get everyone using them correctly
 
 automated gerrit reviews
-   ci-jobs to push glossary to repos, but manual merges still required
+   ci-jobs to push glossary to repositories, but manual merges still required
 
 Sphinx extension
    Submit changes to glossary. When a release is ready, package and submit to
-   PyPi. Then include the package in each doc repo by specifying it as a
+   PyPi. Then include the package in each doc repository by specifying it as a
    requirement in requirements.txt and adding it to conf.py in the sphinx
    project. A Sphinx extension is required to build the glossary and use it
    as a directive so you can add it to the docs' index.rst.
@@ -145,11 +145,11 @@ Tony Campbell (Rackspace) and Michael Apostol (OSIC)
   advancement
 - new recruits were arranged into small teams and assigned coaches for
   mentoring outside the formal training
-- training graduates were assigned to work on targeted OStack projects
+- training graduates were assigned to work on targeted OpenStack projects
 
 **Challenges**
 
-- finding OStack talent and drawing them to San Antonio
+- finding OpenStack talent and drawing them to San Antonio
 - teaching new contributors how to be effective in the community (this is
   very project specific)
 - identifying the best bugs for new contributors
@@ -157,27 +157,27 @@ Tony Campbell (Rackspace) and Michael Apostol (OSIC)
 **Lessons learned**
 
 Cast a global net
-   OStack is a global community, so find talent by looking world-wide.
+   OpenStack is a global community, so find talent by looking world-wide.
    Bringing the teams together geographically in San Antonio was very useful
    for building teams.
 
 Farm universities for talent
    Partner with universities to develop talent. Collaborate on cloud curriculum
-   with an emphasis on OStack. Offer paid internships and job opportunities.
+   with an emphasis on OpenStack. Offer paid internships and job opportunities.
 
 Solar System model
-   Leverage OStack experts (PTLs, Cores) and surround them with new developers
-   so they can learn the ecosystem and become influencers
+   Leverage OpenStack experts (PTLs, Cores) and surround them with new
+   developers so they can learn the ecosystem and become influencers
 
 Develop a learning culture
    Learn to embrace rookies and training as a strategic leverage point.
    Schedule regular rhythm of training and development, offering a funnel
-   to deeper training. Continually asesess training effectiveness.
+   to deeper training. Continually assess training effectiveness.
 
 The Way of the Stacker
-   OStack community has a culture of its own. To be a success you must embrace
-   and work within that culture. Many new devs also need some introduction
-   to open source development generally.
+   OpenStack community has a culture of its own. To be a success you must
+   embrace and work within that culture. Many new developers also need some
+   introduction to open source development generally.
 
 **What's Next**
 
@@ -234,11 +234,11 @@ https://etherpad.openstack.org/p/austin-docs-contributorguide
 **Work items**
 
 - improve doc-tools documentation and clean up. This should be in the doc-tools
-  repo. Links to this content from the Contributor Guide. Add personas to this
-  section in the Contributor Guide so people know what info is relevant to
+  repository. Links to this content from the Contributor Guide. Add personae to
+  this section in the Contributor Guide so people know what info is relevant to
   them.
 - Add openstackdocstheme overview to Contributor Guide with links to detailed
-  content in the theme repo.
+  content in the theme repository.
 - Add some reno documentation/guidelines. Olga to create a spec. See
   http://docs.openstack.org/project-team-guide/release-management.html#how-to-add-new-release-notes
 - standards for diagrams. Image library?

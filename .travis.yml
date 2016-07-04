@@ -1,15 +1,11 @@
 language: python
 branches:
-  only:
-    - master
-    - gh-pages
-python:
-  - "3.4"
-install:
-  - pip install tox
-script:
-  - tox
+  only: master
+python: "3.4"
+install: pip install tox
+script: tox
 addons:
   apt:
     packages:
     - enchant
+after_success: ./deploy.sh

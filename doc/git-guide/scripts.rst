@@ -60,7 +60,7 @@ master.sh
 
 .. _branchlist:
 
-branchlish.sh
+branchlist.sh
 ~~~~~~~~~~~~~
 
 .. code::
