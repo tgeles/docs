@@ -163,3 +163,12 @@ Notes
 - Russell Sim at Aptira for rendering RST
 - Move Hot Guide from End User Guide to Heat repository
 - https://github.com/GaretJax/sphinx-autobuild
+
+
+.. spelling::
+
+   committers
+   ToC
+   curation
+   Shilah
+   Aptira

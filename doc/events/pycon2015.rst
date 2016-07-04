@@ -175,7 +175,7 @@ Monty Taylor
 
   - OS diskimage-builder
   - packer
-  - pre-built images from Ubuntu/RH/SUSE
+  - images from Ubuntu/RH/SUSE
   - problem: hypervisor image file format
 
     - Rackspace uses VHD
@@ -194,7 +194,7 @@ Monty Taylor
 
 - solutions:
 
-  - os-client-config
+  - ``os-client-config``
   - shade
 
     - a library to wrap business logic around client libraries
@@ -326,3 +326,32 @@ Katie Bell
 On Being Pythonic
 ~~~~~~~~~~~~~~~~~
 Peter Lovett
+
+
+.. spelling::
+
+   thespia
+   Kubernetes
+   routable
+   Koutsoukis
+   jetbrains
+   pythonprogramming
+   Jinja
+   Soldateschi
+   Hattingh
+   edX
+   Zornig
+   UQx
+   Terabytes
+   nodepool
+   diskimage
+   vechost
+   nodepool
+   Zona
+   Lachlan
+   Blackhall
+   Hattingh
+   easycython
+   Numba
+   nighter
+   Lovett

@@ -41,8 +41,8 @@ Sample Scripts
 :ref:`repocheck`
 ----------------
 
-Prints ``git status -s -b`` of repos in the listed directories if they have
-uncommitted changes or if they are not on the master branch.
+Prints ``git status -s -b`` of repositories in the listed directories if they
+have uncommitted changes or if they are not on the master branch.
 
 This script is helpful for checking if you have any work that has not been
 committed or pushed, and also for ensuring that you are on the master branches

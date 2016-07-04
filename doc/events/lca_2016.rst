@@ -282,7 +282,7 @@ Moriel Schottlender - Wikimedia Foundation
 
 - thinking about RTL issues exposes general issues with language software
 - RTL user base is growing
-- RTL readers also see other things RTL, for example where a logo or nav
+- RTL readers also see other things RTL, for example where a logo or navigation
   controls on top right rather than top left
 - initial solution for internet RTL was simply to write things backwards using
   conversion scripts
@@ -566,3 +566,51 @@ National Wool Museum
 --------------------
 Demonstration of rug weaving machine that uses hundreds of cardboard cards
 to create the design. Very cool!
+
+
+.. spelling::
+
+   au
+   Zac
+   acked
+   nacked
+   opensource
+   Endsley
+   Bopf
+   f'ing
+   Fong
+   Buttfield
+   hackathons
+   productization
+   nighter
+   Hawke
+   Brasseur
+   petabytes
+   Wayback
+   internetarchive
+   Mota
+   affordances
+   de
+   edX
+   tahW
+   Moriel
+   Schottlender
+   unikernels
+   Borthwick
+   te
+   mea
+   nui
+   Koha
+   edlib
+   renderers
+   Endsley
+   Lovett
+   Suehle
+   Atmel
+   ATmega
+   Hynyx
+   OSes
+   dx
+   Kodi
+   Suehle
+   Calloway

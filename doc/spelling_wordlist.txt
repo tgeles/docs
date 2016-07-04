@@ -1,5 +1,6 @@
 Admin
 admin
+admins
 Ansible
 ansible
 app
@@ -9,6 +10,8 @@ arduino
 backend
 backends
 blog
+branchlist
+Brindley
 builtin
 cirros
 conf
@@ -34,10 +37,12 @@ http
 hypervisor
 internet
 kallimachos
+Lana
 Linux
 linux
 Miniconf
 miniconf
+Mirantis
 Mitaka
 mitaka
 multiplayer
@@ -67,6 +72,7 @@ repo
 repocheck
 RST
 rst
+SaaS
 sharding
 sqlite
 SUSE

@@ -24,7 +24,7 @@ https://etherpad.openstack.org/p/AUS-ops-Beyond-the-Release-Notes
 
 Meet the OpenStack Personae (So Far)
 ------------------------------------
-bit.ly/OpenStackPersonasAustin
+https://etherpad.openstack.org/p/mitaka-openstackux-personasession
 
 - Workshop @Rackspace Austin
 
@@ -124,7 +124,8 @@ git sub-module
    these are difficult to set up and to get everyone using them correctly
 
 automated gerrit reviews
-   ci-jobs to push glossary to repositories, but manual merges still required
+   continuous integration jobs to push glossary to repositories, but manual
+   merges still required
 
 Sphinx extension
    Submit changes to glossary. When a release is ready, package and submit to
@@ -279,3 +280,19 @@ To-Do
   <http://blog.getpelican.com/>`_
 - :ref:`Contributor Guide work items <contributor-guide-work-items>`
 - `Write the Docs <http://www.writethedocs.org/>`_
+
+
+.. spelling::
+
+   OpenStackPersonasAustin
+   Thierry
+   Carrez
+   Maffulli
+   Boylan
+   Zendesk
+   Karslioglu
+   Apostol
+   influencers
+   Toolchain
+   openstackdocstheme
+   Meetup
