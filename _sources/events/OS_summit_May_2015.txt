@@ -20,7 +20,7 @@ OpenStack Infrastructure Management with ManageIQ - John Hardy (Red Hat)
 
 OpenStack Docs RST Conversion - Lana Brindley (Rackspace)
 ---------------------------------------------------------
-- UG SG will focus on converting the Cloud Admin Guide to rst
+- UG SG will focus on converting the Cloud Admin Guide to RST
 - in the meantime, the rest of the community will focus on converting the
   Install Guide
 - the Install Guide will focus on the core components only
@@ -38,8 +38,8 @@ OpenStack Ops Doc Work Session
   for many use cases
 - Installation Guide is really an Installation Training Guide
 - clarity over which guide contains which information
-- prereqs at start (to start this guide you should have done this, be familiar
-  with this)
+- prerequisites at start (to start this guide you should have done this, be
+  familiar with this)
 - next steps at end (see this guide for the next things you can do)
 - describe the current book and the other books at the top of each book so
   people know where they are and if they are in the correct place
@@ -79,7 +79,7 @@ Docs Team Structure Fishbowl Session
 
 - Reviewing
 
-  - Review Guide should be better propogated
+  - Review Guide should be better propagated
   - perhaps add a section to the Review Guide telling first time committers
     what they can expect during reviews
 
@@ -89,7 +89,7 @@ Docs Team Structure Fishbowl Session
   put a link to the review guidelines at the top of the page, next to the How
   To links
 
-  - Rewrite the documentation Howto, resulting in a good, easy-to-read and
+  - Rewrite the documentation How To, resulting in a good, easy-to-read and
     working getting started guide (Note: Avoid duplication with infra-manual)
 
 - Making core
@@ -103,11 +103,11 @@ Docs Team Structure Fishbowl Session
 - New contributors
 
   - tutorial for contributing where writers can work in a sandbox = smaller
-    repo to download, changes don't matter
+    repository to download, changes don't matter
   - make a 5 minute video
 
-- Encouraging technical content for speciality guides
-  - each dev team should have a docs liason
+- Encouraging technical content for specialty guides
+  - each dev team should have a docs liaison
 
 
 Docs Information Architecture
@@ -130,25 +130,25 @@ Docs Information Architecture
 Post-summit tasks
 ~~~~~~~~~~~~~~~~~
 
-- Move Hot Guide from End User Guide to Heat repo
+- Move Hot Guide from End User Guide to Heat repository
 - Convert Cloud Admin Guide to RST
 - Restructure Cloud Admin Guide, Admin User Guide, and End User Guide. End
   result should be an Admin Guide and a User Guide
 - Upgrade material from the Ops Guide might fit better in the Admin guide
-- Buglist curation
+- Bug list curation
 - Update review guide on wiki
 - Update How To and How To for First Timers on wiki; make the latter a tutorial
-  that works with a sandbox repo for trying out the tools
+  that works with a sandbox repository for trying out the tools
 
   - talk to Amanda about this, and run plans past Lana before making big
     changes
   - include a section on Git rebasing
-  - instructions should tell us to clone from git.openstack.org or github;
+  - instructions should tell us to clone from git.openstack.org or GitHub;
     right now it is inconsistent
 
 - For each book where it makes sense:
 
-  - prereqs at start (to start this guide you should have done this, be
+  - prerequisites at start (to start this guide you should have done this, be
     familiar with this)
   - next steps at end (see this guide for the next things you can do)
   - describe the current book and the other books at the top of each book so
@@ -161,5 +161,14 @@ Post-summit tasks
 Notes
 ~~~~~
 - Russell Sim at Aptira for rendering RST
-- Move Hot Guide from End User Guide to Heat repo
+- Move Hot Guide from End User Guide to Heat repository
 - https://github.com/GaretJax/sphinx-autobuild
+
+
+.. spelling::
+
+   committers
+   ToC
+   curation
+   Shilah
+   Aptira

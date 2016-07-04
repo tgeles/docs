@@ -46,3 +46,8 @@ Working with Local Branches
      - specifies a new remote upstream repository that will be synced with the fork
    * - git remote update --prune
      - updates list of remote branches on the local machine
+
+
+.. spelling::
+
+   untracked

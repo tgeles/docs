@@ -22,11 +22,11 @@ Johnathan Bryce (Executive Director, OpenStack Foundation)
 
   - 64.99 billion page views per month
   - 31.9 billion are from mobile devices
-  - 270 million apps downlowded
+  - 270 million apps downloaded
   - 100+ services
   - running 50000+ instances on OS
   - 20 PB data storage
-  - 6 times traffic denisty compared to physical env
+  - 6 times traffic density compared to physical environment
   - 20+ clusters
   - they've doubled OS use in the last year
   - experience massive spikes when certain events (e.g. natural disaster) take
@@ -73,7 +73,7 @@ Ops Liberty Issues
   mentioned in release notes
 - conclusion: Release Notes are very important to ops and decisions to
   upgrades; they should be given closer attention
-  and need more involement from projects so they are accurate
+  and need more involvement from projects so they are accurate
 - suggestion that we update Release Notes following mid-cycle meetups (nova has
   done this once before)
 - upgrades are a key concern; solid docs for updating each service is very
@@ -103,8 +103,8 @@ Florian Haas (Principal Consultant, hastexo)
 
 - the room was full, but this would be worth watching online later
 
-Upgading OpenStack Without Breaking Everything (Including Neutron!)
--------------------------------------------------------------------
+Upgrading OpenStack Without Breaking Everything (Including Neutron!)
+--------------------------------------------------------------------
 Sean Lynn (Principal Engineer, OpenStack DevOps, TWC) and Clayton O'Neill
 (Principal Engineer, Time Warner Cable)
 
@@ -124,7 +124,29 @@ Sean Lynn (Principal Engineer, OpenStack DevOps, TWC) and Clayton O'Neill
 - add load to the dev/staging environments
 - shut down services in such a manner that no Juno services are trying to talk
   to Kilo services
-- change to config for nova and cinder was not well documented
+- change to configuration for nova and cinder was not well documented
 - Juno deprecations were not documented as removed in the Kilo Release Notes
 - a new Kilo default was not documented in the Release Notes
 - new features were not always well documented
+
+
+.. spelling::
+
+   Egle
+   Sigler
+   Lachlan
+   Evenson
+   Takuya
+   Blackbelt
+   Tsugikazu
+   Shibata
+   Brescia
+   Bitnami
+   Ying
+   Chun
+   Guo
+   wikis
+   Kato
+   Tomoyuki
+   meetups
+   hastexo

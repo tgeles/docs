@@ -10,3 +10,8 @@ full-fledged repository with complete history and full revision tracking
 capabilities, and is not dependent on network access or a central
 server. Git is free software distributed under the terms of the GNU
 General Public License version 2.
+
+
+.. spelling::
+
+   Torvalds

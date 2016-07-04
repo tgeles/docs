@@ -224,10 +224,10 @@ around easily</li>
 <p>Brad Nielsen</p>
 <ul class="simple">
 <li>easier to work online than worrying about configuration in a BYOD school</li>
-<li>perfers Python because it is easier to get into than things like Java</li>
+<li>prefers Python because it is easier to get into than things like Java</li>
 <li>online environments are good because it lets the students try things they are
 interested in while the teacher functions as a mentor</li>
-<li>was looking for a python webserver kids could program on both inside and
+<li>was looking for a python web server kids could program on both inside and
 outside the school network</li>
 <li>Flask and Django solve the same problems but Django can be more complex and
 restrictive</li>
@@ -306,10 +306,11 @@ that my service survives issues in any one of them</li>
 merging; 1.7 million test jobs in the last six months; 18 Terabytes of log
 data in six months</li>
 <li>each test runs on a single use cloud slave</li>
-<li>they run no hardware servers for these tests; evertyhing is run on Rackspace
+<li>they run no hardware servers for these tests; everything is run on Rackspace
 and HP clouds</li>
 <li>Gerrit<ul>
-<li>traditional enterprise Java application (ie not particularly cloud-native)</li>
+<li>traditional enterprise Java application (i.e. not particularly
+cloud-native)</li>
 <li>run as a single Nova VM with a Cinder volume (which works well enough)</li>
 <li>scale out farm of git replicas</li>
 <li>2500 changes every week</li>
@@ -337,7 +338,7 @@ and HP clouds</li>
 <li>Get a base image<ul>
 <li>OS diskimage-builder</li>
 <li>packer</li>
-<li>pre-built images from Ubuntu/RH/SUSE</li>
+<li>images from Ubuntu/RH/SUSE</li>
 <li>problem: hypervisor image file format<ul>
 <li>Rackspace uses VHD</li>
 <li>HP uses qcow2</li>
@@ -357,10 +358,10 @@ and HP clouds</li>
 </ul>
 </li>
 <li>solutions:<ul>
-<li>os-client-config</li>
+<li><code class="docutils literal"><span class="pre">os-client-config</span></code></li>
 <li>shade<ul>
 <li>a library to wrap business logic around client libraries</li>
-<li>in use in infra nodepool and ansible (v2.0, multi-cloude support)</li>
+<li>in use in infra nodepool and ansible (v2.0, multi-cloud support)</li>
 </ul>
 </li>
 </ul>
@@ -415,7 +416,7 @@ informed appreciation and understanding (ahead of time) of the consequences</li>
 </li>
 <li>insightful algorithms are growing in precision but the risk of damage is also
 rising</li>
-<li>anticipate diverse ways to screwup<ul>
+<li>anticipate diverse ways to screw up<ul>
 <li>this requires truly diverse teams having decision authority</li>
 </ul>
 </li>
@@ -423,7 +424,7 @@ rising</li>
 <li>audit constantly</li>
 <li>recognize bias is inherent</li>
 <li>visionary about countering bias</li>
-<li>aim mining tools at public benefite consequences<ul>
+<li>aim mining tools at public benefit consequences<ul>
 <li>currently these are mostly aimed at corporate uses</li>
 </ul>
 </li>
@@ -449,7 +450,7 @@ rising</li>
 <ul class="simple">
 <li>Cython lets you specify object/variable types to save time as Python doesn&#8217;t
 have to determine type</li>
-<li>Cython is a superset of Python; it can compile anything written in Python
+<li>Cython is a super set of Python; it can compile anything written in Python
 into a C file</li>
 <li>easycython is a useful wrapper to help with cython code</li>
 <li>it speeds up Python code significantly when crunching large amounts of data<ul>
@@ -458,7 +459,7 @@ rest can just be standard python</li>
 </ul>
 </li>
 <li>PyPy and Numba are both options for speeding up Python code as well</li>
-<li>Cython can be run multi-core (with nogil)</li>
+<li>Cython can be run multi-core (with no global interpreter lock)</li>
 <li>but limit your Cython to only the bit that really need it, as it adds some
 complexity and debugging difficulties</li>
 </ul>
@@ -491,7 +492,7 @@ complicated so they built a wrapper and let the kids use that</li>
 <li>communication is paramount</li>
 <li>continual integration -&gt; always have something working, have students demo
 often</li>
-<li>explain new procedurs to the whole class at the same time</li>
+<li>explain new procedures to the whole class at the same time</li>
 <li>share successes</li>
 </ul>
 </div>
