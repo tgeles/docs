@@ -55,7 +55,7 @@ CentOS DevStack on RAX
 
 #. Specify passwords when required by the installation script.
 
-#. After the installation finishes, logout as the **stack** user:
+#. After the installation finishes, log out as the **stack** user:
 
    .. code::
 

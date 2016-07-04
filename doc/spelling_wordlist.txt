@@ -24,6 +24,7 @@ devs
 devstack
 Django
 django
+Firefox
 Geelong
 Gerrit
 gerrit
@@ -45,6 +46,7 @@ miniconf
 Mirantis
 Mitaka
 mitaka
+multi
 multiplayer
 ok
 online
@@ -83,6 +85,7 @@ unikernel
 VMware
 webpage
 webserver
+whitespace
 wiki
 Wikimedia
 Zanata

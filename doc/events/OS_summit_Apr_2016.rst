@@ -296,3 +296,5 @@ To-Do
    Toolchain
    openstackdocstheme
    Meetup
+   Svetlana
+   reno

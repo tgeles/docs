@@ -256,7 +256,7 @@ Going faster: Continuous delivery for Firefox
 Laura Thomson
 
 - get features and fixes to end users through continuous delivery using
-  browser add-ons
+  browser add ons
 
 
 Education and the AGPL: A case study
@@ -318,7 +318,7 @@ Matt Oliver
 - distributed system
 - can use commodity hardware
 - flexible
-- multi-region
+- multi region
 - customizable (open source)
 - storage policies and erasure coding
 - 3 basic resources in Swift that are all treated as objects:
@@ -364,8 +364,8 @@ Michael Borthwick
 - RAAF cut-away engine that visitors could watch operate for 30 seconds at a
   time
 
-  - made custom board from various arduino add-ons
-  - was able to use open source libraries for arduino add-ons to build
+  - made custom board from various arduino add ons
+  - was able to use open source libraries for arduino add ons to build
     the code
 
 - AC/DC exhibit at Art Gallery Victoria
@@ -433,7 +433,7 @@ Neil Brown
 - everything is pluggable
 - multiple document backends
 - multiple language bindings
-- multiple multi-stage renderers
+- multiple multistage renderers
 - multiple display managers
 - configurable key/event bindings
 - loadable libraries for everything else
@@ -591,6 +591,7 @@ to create the design. Very cool!
    Mota
    affordances
    de
+   Blanc
    edX
    tahW
    Moriel
@@ -614,3 +615,4 @@ to create the design. Very cool!
    Kodi
    Suehle
    Calloway
+   nighters
