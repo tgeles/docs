@@ -256,7 +256,7 @@ Going faster: Continuous delivery for Firefox
 Laura Thomson
 
 - get features and fixes to end users through continuous delivery using
-  browser add ons
+  browser add-ons
 
 
 Education and the AGPL: A case study
@@ -364,8 +364,8 @@ Michael Borthwick
 - RAAF cut-away engine that visitors could watch operate for 30 seconds at a
   time
 
-  - made custom board from various arduino add ons
-  - was able to use open source libraries for arduino add ons to build
+  - made custom board from various arduino add-ons
+  - was able to use open source libraries for arduino add-ons to build
     the code
 
 - AC/DC exhibit at Art Gallery Victoria
@@ -616,3 +616,5 @@ to create the design. Very cool!
    Suehle
    Calloway
    nighters
+   pluggable
+   add-ons
