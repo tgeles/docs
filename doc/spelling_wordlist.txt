@@ -72,6 +72,7 @@ rebases
 rebasing
 repo
 repocheck
+reStructuredText
 RST
 rst
 SaaS

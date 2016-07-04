@@ -13,3 +13,4 @@ A collection of documents on various subjects written by
    events/index.rst
    git-guide/index.rst
    rax/index.rst
+   sphinx/index.rst
