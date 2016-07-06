@@ -40,10 +40,14 @@ except ImportError:
 extensions = [
     'sphinx.ext.ifconfig',
     'sphinx.ext.todo',
+    'sphinx-prompt',
 ]
 
 if spelling is not None:
     extensions.append('sphinxcontrib.spelling')
+
+# if sphinx-prompt is not None:
+# extensions.append('sphinx-prompt')
 
 # Add any paths that contain templates here, relative to this directory.
 # templates_path = ['_templates']

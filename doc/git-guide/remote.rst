@@ -37,11 +37,11 @@ Troubleshooting
 
 To reset origin remote to upstream remote, run the following commands:
 
-.. code::
+   .. prompt:: bash
 
-   git remote update
-   git reset --hard upstream/master --
-   git push origin +master
+      git remote update
+      git reset --hard upstream/master --
+      git push origin +master
 
 The double hyphen ensures that ``upstream/master`` is considered as a revision
 and not confused as a path.

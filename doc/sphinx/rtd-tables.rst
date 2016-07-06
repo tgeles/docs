@@ -11,21 +11,21 @@ You can workaround this issue by defining a custom CCS override file.
 #. Change into your documentation directory. This is usually where
    the ``index.rst`` and ``conf.py`` files are located:
 
-   .. code::
+   .. prompt:: bash
 
-      $ cd doc
+      cd doc
 
 #. If it does not already exist, create a ``_static`` directory:
 
-   .. code::
+   .. prompt:: bash
 
-      $ mkdir _static
+      mkdir _static
 
 #. Create a ``theme_overrides.css`` file in the ``_static`` directory:
 
-   .. code::
+   .. prompt:: bash
 
-      $ touch _static/theme_overrides.css
+      touch _static/theme_overrides.css
 
 #. Open the ``theme_overrides.css`` file and add the following CSS:
 
