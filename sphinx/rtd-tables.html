@@ -142,20 +142,18 @@ bars.</p>
 <ol class="arabic">
 <li><p class="first">Change into your documentation directory. This is usually where
 the <code class="docutils literal"><span class="pre">index.rst</span></code> and <code class="docutils literal"><span class="pre">conf.py</span></code> files are located:</p>
-<div class="code highlight-default"><div class="highlight"><pre><span></span>$ cd doc
-</pre></div>
-</div>
-</li>
+<pre class="highlight"><style type="text/css">
+span.prompt1:before {
+  content: "$ ";
+}
+</style><span class="prompt1"><span class="nb">cd</span> doc</span>
+</pre></li>
 <li><p class="first">If it does not already exist, create a <code class="docutils literal"><span class="pre">_static</span></code> directory:</p>
-<div class="code highlight-default"><div class="highlight"><pre><span></span>$ mkdir _static
-</pre></div>
-</div>
-</li>
+<pre class="highlight"><span class="prompt1">mkdir _static</span>
+</pre></li>
 <li><p class="first">Create a <code class="docutils literal"><span class="pre">theme_overrides.css</span></code> file in the <code class="docutils literal"><span class="pre">_static</span></code> directory:</p>
-<div class="code highlight-default"><div class="highlight"><pre><span></span>$ touch _static/theme_overrides.css
-</pre></div>
-</div>
-</li>
+<pre class="highlight"><span class="prompt1">touch _static/theme_overrides.css</span>
+</pre></li>
 <li><p class="first">Open the <code class="docutils literal"><span class="pre">theme_overrides.css</span></code> file and add the following CSS:</p>
 <div class="code highlight-default"><div class="highlight"><pre><span></span>/* override table width restrictions */
 @media screen and (min-width: 767px) {

@@ -165,18 +165,24 @@ repositories on your local machine.</p>
 <strong>~/scripts/</strong></p>
 </li>
 <li><p class="first">Make the script executable:</p>
-<p><code class="docutils literal"><span class="pre">$</span> <span class="pre">chmod</span> <span class="pre">a+x</span> <span class="pre">myscript.sh</span></code></p>
-</li>
+<pre class="highlight"><style type="text/css">
+span.prompt1:before {
+  content: "$ ";
+}
+</style><span class="prompt1">chmod a+x myscript.sh</span>
+</pre></li>
 <li><p class="first">Open <strong>~/.bashrc</strong> and add an alias for the script:</p>
-<p><code class="docutils literal"><span class="pre">alias</span> <span class="pre">myscript='~/scripts/myscript.sh'</span></code></p>
+<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">alias</span> <span class="n">myscript</span><span class="o">=</span><span class="s1">&#39;~/scripts/myscript.sh&#39;</span>
+</pre></div>
+</div>
 </li>
 <li><p class="first">Save the change, then reload the file for the current terminal
 session:</p>
-<p><code class="docutils literal"><span class="pre">$</span> <span class="pre">source</span> <span class="pre">~/.bashrc</span></code></p>
-</li>
+<pre class="highlight"><span class="prompt1"><span class="nb">source</span> ~/.bashrc</span>
+</pre></li>
 <li><p class="first">Run the script by using the alias on the command line:</p>
-<p><code class="docutils literal"><span class="pre">$</span> <span class="pre">myscript</span></code></p>
-</li>
+<pre class="highlight"><span class="prompt1">myscript</span>
+</pre></li>
 </ol>
 <div class="section" id="sample-scripts">
 <h2>Sample Scripts<a class="headerlink" href="#sample-scripts" title="Permalink to this headline">#</a></h2>

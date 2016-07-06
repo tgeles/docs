@@ -42,7 +42,7 @@ Working with Local Branches
      - deletes the specified local branch regardless of its merge status
    * - git remote -v
      - lists current configured remotes for the fork
-   * - git remote add upstream git@github.com:*original_owner*/*original_repository*.git
+   * - git remote add upstream git\@github.com:*original_owner*/*original_repository*.git
      - specifies a new remote upstream repository that will be synced with the fork
    * - git remote update --prune
      - updates list of remote branches on the local machine

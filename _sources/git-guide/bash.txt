@@ -19,20 +19,28 @@ Creating aliases for your scripts for easy access is recommended.
 
 #. Make the script executable:
 
-   ``$ chmod a+x myscript.sh``
+   .. prompt:: bash
+
+      chmod a+x myscript.sh
 
 #. Open **~/.bashrc** and add an alias for the script:
 
-   ``alias myscript='~/scripts/myscript.sh'``
+   .. code::
+
+      alias myscript='~/scripts/myscript.sh'
 
 #. Save the change, then reload the file for the current terminal
    session:
 
-   ``$ source ~/.bashrc``
+   .. prompt:: bash
+
+      source ~/.bashrc
 
 #. Run the script by using the alias on the command line:
 
-   ``$ myscript``
+   .. prompt:: bash
+
+      myscript
 
 
 Sample Scripts

@@ -190,11 +190,15 @@ remote branch; running <code class="docutils literal"><span class="pre">git</spa
 <div class="section" id="troubleshooting">
 <h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this headline">#</a></h2>
 <p>To reset origin remote to upstream remote, run the following commands:</p>
-<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">remote</span> <span class="n">update</span>
-<span class="n">git</span> <span class="n">reset</span> <span class="o">--</span><span class="n">hard</span> <span class="n">upstream</span><span class="o">/</span><span class="n">master</span> <span class="o">--</span>
-<span class="n">git</span> <span class="n">push</span> <span class="n">origin</span> <span class="o">+</span><span class="n">master</span>
-</pre></div>
-</div>
+<blockquote>
+<div><pre class="highlight"><style type="text/css">
+span.prompt1:before {
+  content: "$ ";
+}
+</style><span class="prompt1">git remote update</span>
+<span class="prompt1">git reset --hard upstream/master --</span>
+<span class="prompt1">git push origin +master</span>
+</pre></div></blockquote>
 <p>The double hyphen ensures that <code class="docutils literal"><span class="pre">upstream/master</span></code> is considered as a revision
 and not confused as a path.</p>
 </div>
