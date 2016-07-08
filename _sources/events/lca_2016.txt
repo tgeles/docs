@@ -406,13 +406,13 @@ John Dickinson
 - represent data as coefficients of polynomials
 - even if you lose some parts, you can reconstruct them using the polynomial:
 
-.. code::
+  .. code::
 
-   g'day
+     g'day
 
-   [7, 27, 4, 1, 25]
+     [7, 27, 4, 1, 25]
 
-   f(x) = 7x(4) + 27x(3) + 4x(2) + 1x(1) + 25
+     f(x) = 7x(4) + 27x(3) + 4x(2) + 1x(1) + 25
 
 - uses http to communicate
 - when a request is made, the server returns a 100 Continue status, which
